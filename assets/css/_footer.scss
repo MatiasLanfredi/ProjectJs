@@ -1,0 +1,32 @@
+.footer {
+    background-color: $grey;
+    width: 100%;
+    padding: 20px 0px 40px 0px;
+    &__content {
+        width: 1111px;
+        margin: auto;
+        padding-top: 50px;
+        border-top: 1px solid $greyTxt;
+        display: flex;
+        justify-content: space-between;
+        &-me {
+            display: flex;
+            gap: 20px;
+            color: $greyTxt;
+            font-size: 0.8rem;
+        }
+        &__info {
+            &__list {
+                list-style: none;
+                display: flex;
+                gap: 30px;
+                &-item {
+                    a {
+                        font-size: 0.8rem;
+                        color: $greyTxt;
+                    }
+                }
+            }
+        }
+    }
+}

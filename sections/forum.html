@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>FrontFriends | Forum</title>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>ACA IRIA UN NAVBAR SI TAN SOLO TENDRIA UNO</header>
+    <div class="container__forum">
+      <div class="container__forum__header">
+        <div class="container__forum__header__content">
+          <h3 class="container__forum__header__content-title">
+            Create a new post
+          </h3>
+          <button class="btn btn-open">+</button>
+        </div>
+        <div class="date">
+          <div class="dateRight">
+            <div id="dateNumber"></div>
+            <div>
+              <div id="dateMonth"></div>
+              <div id="dateYear"></div>
+            </div>
+          </div>
+          <div id="dateText"></div>
+        </div>
+        <section class="modal hidden">
+          <div class="modal-header">
+            <img src="../assets/images/user.png" alt="user image" />
+            <h2>Create a new post</h2>
+            <button class="btn btn-close">X</button>
+          </div>
+          <div class="modal__form">
+            <form class="modal__form__content" id="form">
+              <input
+                type="text"
+                name="title"
+                id="title-form"
+                placeholder="Title"
+              />
+              <select name="articulo-post" id="tipopost">
+                <option value="article">Article</option>
+                <option value="post">Post</option>
+              </select>
+              <textarea
+                name="form-txt-area"
+                id="form-txt-area"
+                cols="30"
+                rows="3"
+                placeholder="Content"
+              ></textarea>
+              <button class="btn">Send</button>
+            </form>
+          </div>
+        </section>
+        <div class="overlay hidden"></div>
+      </div>
+      <div class="container__forum__sorts">
+        <div class="container__forum__sorts-type">
+          <a href="#">Articles</a>
+          <a href="#">Posts</a>
+        </div>
+        <div class="container__forum__sorts-dateAgo">
+          <select name="" id="">
+            <option value="">Article</option>
+            <option value="">Post</option>
+          </select>
+        </div>
+      </div>
+      <div id="tasksContainer"></div>
+    </div>
+    <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/datos.js"></script>
+    <script src="../assets/js/forum.js"></script>
+  </body>
+</html>

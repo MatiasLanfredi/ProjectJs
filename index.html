@@ -4,79 +4,229 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  ICONS LINK -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <!--  ICON PNG LINK -->
+    <link rel="icon" href="./assets/images/iconPage.png" />
+    <!--  CSS LINKS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Login | FF</title>
+    <!--  TITLE SECTION -->
+    <title>FrontFriends | Home</title>
   </head>
-  <body class="body-login">
-    <main class="main-login">
-      <div class="container__main">
-        <div class="container__back">
-          <div class="container__back-login">
-            <h3>¿Ya tienes una cuenta?</h3>
-            <p>Inicia sesion para entrar en la pagina</p>
-            <button id="btn__iniciar-sesion">Iniciar Sesion</button>
-          </div>
-          <div class="container__back-register">
-            <h3>¿Aun no tienes una cuenta?</h3>
-            <p>Registrate para que puedas iniciar sesion</p>
-            <button id="btn__register">Registrate</button>
-          </div>
+  <body>
+    <!--HEADER-->
+    <header class="header">
+      <div class="container">
+        <h1 class="header__name">FrontFriends</h1>
+        <ul class="header__list">
+          <li class="header__item"><a href="#">Home</a></li>
+          <li class="header__item"><a href="#">Services </a></li>
+          <li class="header__item"><a href="#">Forum</a></li>
+          <li class="header__item"><a href="#">Shop</a></li>
+          <li class="header__item"><a href="#">Chat</a></li>
+        </ul>
+        <a class="header__btn" href="./sections/login.html">Sign in</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__content">
+        <div class="main__content__txt">
+          <h2 class="main__content__txt-title">Education for all</h2>
+          <p class="main__content__txt-paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            voluptas voluptatum inventore ducimus repudiandae.
+          </p>
+          <a class="main__content__txt-btn" href="#">Read More</a>
         </div>
-
-        <!-- FORMULARIO  -->
-        <div class="container__login-register">
-          <!-- FORMULARIO LOGIN -->
-          <form action="" class="form__login">
-            <h2>Iniciar Sesion</h2>
-            <input
-              type="email"
-              placeholder="Correo Electronico"
-              id="email-login"
-            />
-            <input id="showpass" type="password" placeholder="Contraseña" />
-            <div class="password-box">
-              <input
-                class="input-password"
-                type="checkbox"
-                name="ShowPassword"
-                id="show-password"
-              />
-              <p>Mostrar Contraseña</p>
-            </div>
-            <button type="submit" id="iniciar-sesion">Iniciar Sesion</button>
-          </form>
-
-          <!-- FORMULARIO REGISTER -->
-
-          <form action="" class="form__register">
-            <h2>Registrarse</h2>
-            <input
-              type="text"
-              placeholder="Nombre Completo"
-              id="nombre-register"
-            />
-            <input
-              type="email"
-              placeholder="Correo Electronico"
-              id="email-register"
-            />
-            <input type="text" placeholder="Usuario" id="user-register" />
-            <input id="showpass2" type="password" placeholder="Password" />
-            <div class="password-box">
-              <input
-                class="input-password show-password"
-                type="checkbox"
-                name="ShowPassword"
-                id="show-password2"
-              />
-              <p>Mostrar Contraseña</p>
-            </div>
-            <button type="submit" id="register-button">Registrarse</button>
-          </form>
+        <div class="main__content__img">
+          <picture>
+            <img src="./assets/images/main3.svg" alt="image of teamwork" />
+          </picture>
         </div>
       </div>
     </main>
+
+    <section class="newsletter">
+      <div class="newsletter__container">
+        <div class="newsletter__button">
+          <h4 class="newsletter__button-title">Suscribe to our newsletter</h4>
+          <div class="newsletter__button__bar">
+            <hr />
+          </div>
+          <p class="newsletter__button-txt">Make it more simple!</p>
+          <div class="newsletter__button-emailbtn">
+            <input
+              class="newsletter__button-emailbtn-input"
+              placeholder="Enter your email"
+              type="email"
+              name="emailNewsletter"
+              id="emailButtonNewsletter"
+            />
+            <button class="newsletter__button-emailbtn-button" type="submit">
+              <i class="uil uil-message"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDEQUOTES CONTAINER -->
+      <div class="backgroundBox">
+        <div class="slider">
+        <div class="slider__container containerSlider">
+          <a class="slider__arrow"  id="before">&#10094;</a>
+          <section class="slider__body slider__body--show" data-id="1">
+            <p class="slider__review">"Learning to write programs stretches your mind, and helps you
+              think better, creates a way of thinking about things that I think
+              is helpful in all domains."</p>
+              
+            </p>
+            <br />
+            <p class="author">- Bill Gates</p>
+          </section>
+          <section class="slider__body" data-id="2">
+            <p class="slider__review">“As a programmer, it is your job to put yourself out of business. What you do today can be automated tomorrow.” </p>
+              
+            </p>
+            <br />
+            <p class="author">- Doug McIlroy</p>
+          </section>
+          <section class="slider__body" data-id="3">
+            <p class="slider__review">“To become successful online, you only need to remember the following : Good Heart + Passion + Web Design + SEO + Digital Marketing + Dedication + Positiveness + Patience = Success”</p>
+              
+            </p>
+            <br />
+            <p class="author"> - Dr. Christopher Dayagdag/p>
+          </section>
+          <a class="slider__arrow" id="next">&#10095;</a>
+        </div>
+      </div>
+    </div>
+    </section>
+
+ 
+      <article class="move__content">
+        <div class="move__content__container">
+          <div class="move__content__container__card animation" id="html">
+            <picture class="move__content__container__card-img">
+              <img
+                src="./assets/images/move1.svg"
+                alt="html image"
+              />
+            </picture>
+            <div class="move__content__container__card-details">
+              <h2 class="move__content__container__card-details-title">Welcome to FrontFriends, Constant self-improvement as Developer</h2>
+              <p class="move__content__container__card-details-txt">
+               FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.
+               <br><br>FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.
+              </p>
+              <a class="move__content__container__card-details-btn" href="#">Get Started</a>
+            </div>
+          </div>
+          <div class="move__content__container__card animation" id="html">
+            <picture class="move__content__container__card-img">
+              <img
+                src="./assets/images/move3.svg"
+                alt="html image"
+              />
+            </picture>
+            <div class="move__content__container__card-details">
+              <h2 class="move__content__container__card-details-title">Welcome to FrontFriends, Constant self-improvement as Developer</h2>
+              <p class="move__content__container__card-details-txt">
+               FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.
+               <br><br>FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.
+              </p>
+              <a class="move__content__container__card-details-btn" href="#">Get Started</a>
+            </div>
+          </div>
+          <div class="move__content__container__card animation" id="html">
+            <picture class="move__content__container__card-img">
+              <img
+                src="./assets/images/move4.svg"
+                alt="html image"
+              />
+            </picture>
+            <div class="move__content__container__card-details">
+              <h2 class="move__content__container__card-details-title">Welcome to FrontFriends, Constant self-improvement as Developer</h2>
+              <p class="move__content__container__card-details-txt">
+               FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.
+               <br><br>FrontFriends is initiative of our Qatar Foundation for Education,Science
+               and Community Development.
+              </p>
+              <a class="move__content__container__card-details-btn" href="#">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      <section class="experiences">
+        <div class="experiences__container">
+          <div class="experiences__container__box">
+            <div class="experiences__container__box-ico">
+               <i class="uil uil-globe"></i>
+            </div>
+            <div class="experiences__container__box-txt">
+              <h4>Global Student</h4>
+              <p>FrontFriends is initiative of our Qatar Foundation for Education,Science
+                and Community Development.</p>
+            </div>
+          </div>
+          <div class="experiences__container__box">
+            <div class="experiences__container__box-ico2">
+              <i class="uil uil-graduation-cap"></i>
+            </div>
+            <div class="experiences__container__box-txt">
+              <h4>Education Services</h4>
+              <p>FrontFriends is initiative of our Qatar Foundation for Education,Science
+                and Community Development.</p>
+            </div>
+          </div>
+          <div class="experiences__container__box">
+            <div class="experiences__container__box-ico3">
+              <i class="uil uil-lightbulb-alt"></i>
+            </div>
+            <div class="experiences__container__box-txt">
+              <h4>Success Rate</h4>
+              <p>FrontFriends is initiative of our Qatar Foundation for Education,Science
+                and Community Development.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    <footer>
+        <div class="footer">
+          <div class="footer__content">
+            <div class="footer__content-me">
+              
+              <p><i class="uil uil-copyright"></i> 2022</p>
+              <p>Matias Lanfredi.</p>
+              <p>All Rights Reserved</p>
+            </div>
+          <div class="footer__content__info">
+            <ul class="footer__content__info__list">
+              <li class="footer__content__info__list-item"><a href="#">About Company</a></li>
+              <li class="footer__content__info__list-item"><a href="#">Privacy Policy</a></li>
+              <li class="footer__content__info__list-item"><a href="#">Help Center</a></li>
+              <li class="footer__content__info__list-item"><a href="#">Terms</a></li>
+              <li class="footer__content__info__list-item"><a href="#">Site Map</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./assets/js/datos.js"></script>
-    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/sweetAlert.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>

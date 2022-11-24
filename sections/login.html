@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Login | FF</title>
+  </head>
+  <body class="body-login">
+      <div class="container__main">
+        <div class="container__back">
+          <div class="container__back-login">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesion para entrar en la pagina</p>
+            <button id="btn__iniciar-sesion">Iniciar Sesion</button>
+          </div>
+          <div class="container__back-register">
+            <h3>¿Aun no tienes una cuenta?</h3>
+            <p>Registrate para que puedas iniciar sesion</p>
+            <button id="btn__register">Registrate</button>
+          </div>
+        </div>
+
+        <!-- FORMULARIO  -->
+        <div class="container__login-register">
+          <!-- FORMULARIO LOGIN -->
+          <form action="" class="form__login">
+            <h2>Iniciar Sesion</h2>
+            <input
+              type="email"
+              placeholder="Correo Electronico"
+              id="email-login"
+            />
+            <input id="showpass" type="password" placeholder="Contraseña" />
+            <div class="password-box">
+              <input
+                class="input-password"
+                type="checkbox"
+                name="ShowPassword"
+                id="show-password"
+              />
+              <p>Mostrar Contraseña</p>
+            </div>
+            <button type="submit" id="iniciar-sesion">Iniciar Sesion</button>
+          </form>
+
+          <!-- FORMULARIO REGISTER -->
+
+          <form action="" class="form__register">
+            <h2>Registrarse</h2>
+            <input
+              type="text"
+              placeholder="Nombre Completo"
+              id="nombre-register"
+            />
+            <input
+              type="email"
+              placeholder="Correo Electronico"
+              id="email-register"
+            />
+            <input type="text" placeholder="Usuario" id="user-register" />
+            <input id="showpass2" type="password" placeholder="Password" />
+            <div class="password-box">
+              <input
+                class="input-password show-password"
+                type="checkbox"
+                name="ShowPassword"
+                id="show-password2"
+              />
+              <p>Mostrar Contraseña</p>
+            </div>
+            <button type="submit" id="register-button">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/datos.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/sweetAlert.js"></script>
+  </body>
+</html>

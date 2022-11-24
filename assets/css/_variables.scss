@@ -1,2 +1,22 @@
 $blue: #46a2fd;
 $grey: #f2f2f2;
+$violet: #6500ff;
+$orange: #ff5f61;
+$darkgrey: #20324a;
+$yellow: #ffc205;
+$greyTxt: #9e9e9e;
+
+%button {
+    color: #fff;
+    background-color: $orange;
+    padding: 2px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    align-self: center;
+    border-radius: 16px;
+    transition: all ease 0.3s;
+    &:hover {
+        color: $darkgrey;
+    }
+}

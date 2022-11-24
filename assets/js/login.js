@@ -1,3 +1,4 @@
+'use strict';
 /*==========VARIABLES=========*/
 
 const containerLoginRegister = document.querySelector(".container__login-register")
@@ -35,57 +36,69 @@ iniciarSesion.addEventListener("click", function (e) {
     signup(usuarioEnJson)
 });
 
-
 /* ============FORM REGISTER ============= */
 
 const registerBoton = document.getElementById("register-button");
 
 registerBoton.addEventListener('click', function (e) {
     e.preventDefault();
-    register;
-    console.log("hola")
+    registro();
 });
-
 
 /*========== FUNCIONES ==============*/
 
-function register() {
-    console.log("hola");
+function registro() {
+
     const nameUserNew = document.getElementById("nombre-register").value;
     const emailUserNew = document.getElementById("email-register").value;
     const usuarioUserNew = document.getElementById("user-register").value;
-    const passwordUserNew = document.getElementById("show-password2").value;
-
+    const passwordUserNew = document.getElementById("showpass2").value;
 
     const userNew = new Usuarios(nameUserNew, emailUserNew, usuarioUserNew, passwordUserNew);
 
-    console.log(userNew);
-
     localStorage.setItem('user', JSON.stringify(userNew));
+    Swal.fire({
+        title: "Registrado Correctamente",
+        icon: 'success',
+        width: '40%',
+        backdrop: true,
+        timer: 3000,
+        timerProgressBar: true,
+        allowOutsideClick: false,
+    });
+    const userNewinJson = JSON.parse(localStorage.getItem('user'));
 
-    let y = JSON.parse(localStorage.getItem('user'))
-
-    console.log(y);
 }
 
 
 function signup(usuarioEnJson) {
-
-    console.log(usuarioEnJson.email);
-
-
     const emailEntrada = document.getElementById("email-login").value;
-
-    console.log(emailEntrada);
-
     const passwordEntrada = document.getElementById("showpass").value;
 
     // emailEntrada === usuarioEnJson.email ? console.log("Ingresado Correctamente") : console.log("Datos incorrectos");
 
-    if (emailEntrada === usuarioEnJson.email) {
-        console.log("Bienvenido")
+    if (emailEntrada === usuarioEnJson.email && passwordEntrada === usuarioEnJson.password) {
+        Swal.fire({
+            title: "Sesion Iniciada",
+            // icon: 'success',
+            icon: 'success',
+            width: '40%',
+            backdrop: true,
+            timer: 3000,
+            timerProgressBar: true,
+            allowOutsideClick: false,
+        });
     } else {
-        console.log("Datos incorrectos");
+        Swal.fire({
+            title: "Datos Incorrectos",
+            // icon: 'success',
+            icon: 'error',
+            width: '40%',
+            backdrop: true,
+            timer: 3000,
+            timerProgressBar: true,
+            allowOutsideClick: false,
+        });
     }
 }
 function showpassword() {

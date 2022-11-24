@@ -1,0 +1,123 @@
+.newsletter {
+    width: 100%;
+    position: relative;
+    &__button {
+        background-color: $orange;
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px -5px 0px 0px $darkgrey;
+        position: absolute;
+        gap: 10px;
+        bottom: 70px;
+        left: 25%;
+        z-index: 10;
+        &-title {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            text-align: center;
+        }
+        &-txt {
+            color: rgba(255, 255, 255, 0.712);
+            text-align: center;
+        }
+        &__bar {
+            height: 4px;
+            border: 0.25rem;
+            hr {
+                display: flex;
+                color: #fff;
+                width: 30%;
+                align-self: center;
+                margin: auto;
+            }
+        }
+        &-emailbtn {
+            background-color: #fff;
+            border-radius: 9px;
+            height: 25px;
+            width: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            &-input {
+                border-radius: 9px;
+                text-align: center;
+                font-size: 0.8rem;
+                border: none;
+                height: 10px;
+                width: 80px;
+                margin-left: 10px;
+                &:focus {
+                    border: none;
+                }
+                &:active {
+                    border: none;
+                }
+            }
+            &-button {
+                @extend .newsletter__button-emailbtn-input;
+                background-color: $darkgrey;
+                height: 100%;
+                width: 20px;
+                border-radius: 0px 10px 10px 0px;
+                cursor: pointer;
+                color: #fff;
+                margin-left: 15px;
+            }
+        }
+    }
+    .containerSlider {
+        overflow: hidden;
+        width: 700px;
+        left: 50%;
+        padding-top: 15px;
+    }
+    .backgroundBox {
+        width: 100%;
+        background-color: $grey;
+    }
+    .slider {
+        display: flex;
+        width: 1111px;
+        margin: auto;
+        justify-content: flex-end;
+        &__container {
+            display: grid;
+            grid-template-columns: 50px 1fr 50px;
+            align-items: center;
+            gap: 1em;
+        }
+        &__body {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            opacity: 0;
+            pointer-events: none;
+            display: grid;
+            background-color: $grey;
+            grid-template-columns: 1fr max-content;
+            align-items: center;
+            transition: opacity 1.5s;
+            &--show {
+                opacity: 1;
+                pointer-events: unset;
+            }
+            .author {
+                color: $orange;
+            }
+        }
+        &__review {
+            font-weight: 300;
+            font-style: italic;
+        }
+        &__arrow {
+            cursor: pointer;
+            &:nth-of-type(2) {
+                justify-self: end;
+            }
+        }
+    }
+}

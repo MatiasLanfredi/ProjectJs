@@ -12,12 +12,14 @@
     max-width: 800px;
     margin: auto;
     position: relative;
+    top: 200px;
 }
 .container__back {
     width: 100%;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
+
     backdrop-filter: blur(100px);
     background-color: rgba(0, 128, 255, 0.5);
     div {

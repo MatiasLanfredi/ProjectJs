@@ -1,0 +1,47 @@
+.header {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $violet;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        width: 1111px;
+        padding: 5px 20px;
+        height: 60px;
+    }
+    &__name {
+        display: flex;
+        align-self: center;
+        color: #fff;
+        transition: 0.3s;
+        &:hover {
+            color: #ffc205;
+        }
+    }
+    &__list {
+        display: inline-flex;
+        list-style: none;
+        gap: 50px;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        height: 54px;
+        justify-content: center;
+        align-items: center;
+        a {
+            color: #fff;
+            font-size: 0.9rem;
+            transition: 0.1s;
+            &:hover {
+                border-bottom: 4px solid $yellow;
+            }
+        }
+    }
+    &__btn {
+        @extend %button;
+    }
+}
