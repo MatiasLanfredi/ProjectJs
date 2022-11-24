@@ -332,6 +332,7 @@
   position: absolute;
   top: 22%;
   left: 33%;
+  height: 500px;
   background-color: #fff;
   border: 3px solid #ff5f61;
   border-radius: 15px;
@@ -367,16 +368,19 @@
 .modal .form__modal {
   width: 500px;
   margin: auto;
+  height: 450px;
 }
 .modal .form__modal__content {
   display: flex;
-  gap: 20px;
+  gap: 60px;
   flex-direction: column;
 }
 .modal .form__modal__content input, .modal .form__modal__content textarea, .modal .form__modal__content select {
   padding-left: 5px;
   border: 1px solid #ff5f61;
   color: #6500ff;
+  font-size: 1.3rem;
+  outline: none;
 }
 .modal .form__modal__content select {
   width: 100px;

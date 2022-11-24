@@ -11,13 +11,27 @@ class Users {
 class ContentBlog {
     constructor(title, typePost, content) {
         this.title = title;
-        // this.imagen = imagen;
         this.typePost = typePost;
         this.content = content;
+        // this.imagen = imagen;
     }
 }
 
 /* ARRAY OBJETOS* */
+
+const savedArticles = [
+    {
+        title: "A random new for testing",
+        typePost: "Info",
+        content: "A random paragraph without any sense just for testing",
+        user: "Mati98",
+    },
+]
+
+localStorage.setItem("arrayArticles", JSON.stringify(savedArticles));
+
+
+//  localStorage.setItem("blogPost", JSON.stringify(article1));
 
 const savedBlogs = [];
 
