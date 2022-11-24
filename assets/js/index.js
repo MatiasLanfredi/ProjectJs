@@ -1,3 +1,4 @@
+'use strict';
 (function () {
     const slider = [...document.querySelectorAll('.slider__body')];
 
@@ -36,10 +37,11 @@ function showOnScroll() {
             animation[i].style.opacity = 1;
             animation[0].classList.add("showAside");
             animation[1].classList.add("showAside");
+            animation[1].style.flexDirection = "row-reverse";
             animation[2].classList.add("showAside");
 
         }
     }
-    console.log(animation);
+
 }
 window.addEventListener('scroll', showOnScroll);

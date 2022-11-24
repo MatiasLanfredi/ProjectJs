@@ -1,5 +1,5 @@
 .body-login {
-    background-image: url(../images/bg4.jpg);
+    background-image: url(../images/bg6.jpg);
 }
 .main-login {
     width: 100%;
@@ -19,9 +19,10 @@
     padding: 10px 20px;
     display: flex;
     justify-content: center;
-
     backdrop-filter: blur(100px);
-    background-color: rgba(0, 128, 255, 0.5);
+    background-color: $violet;
+    border-radius: 16px;
+    border: 1px solid $orange;
     div {
         margin: 100px 40px;
         color: #fff;
@@ -46,8 +47,8 @@
             transition: all 0.3s;
             &:hover {
                 background-color: #fff;
-                color: $blue;
-                border: 2px solid $blue;
+                color: $orange;
+                border: 2px solid $orange;
             }
         }
     }
@@ -69,11 +70,12 @@
         background: #fff;
         position: absolute;
         border-radius: 20px;
+
         h2 {
             font-size: 30px;
             text-align: center;
             margin-bottom: 20px;
-            color: $blue;
+            color: $orange;
         }
         input {
             width: 100%;
@@ -87,7 +89,7 @@
             margin-top: 40px;
             border: none;
             font-size: 14px;
-            background-color: $blue;
+            background-color: $orange;
             color: #fff;
             cursor: pointer;
         }
@@ -106,6 +108,7 @@
                 width: auto;
                 align-self: center;
                 margin-top: 0;
+                // background-color: $orange;
             }
         }
     }
@@ -113,6 +116,9 @@
 .form__login {
     opacity: 1;
     display: block;
+    h2 {
+        color: $orange;
+    }
 }
 .form__register {
     display: none;

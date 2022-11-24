@@ -54,7 +54,7 @@ function registro() {
     const usuarioUserNew = document.getElementById("user-register").value;
     const passwordUserNew = document.getElementById("showpass2").value;
 
-    const userNew = new Usuarios(nameUserNew, emailUserNew, usuarioUserNew, passwordUserNew);
+    const userNew = new Users(nameUserNew, emailUserNew, usuarioUserNew, passwordUserNew);
 
     localStorage.setItem('user', JSON.stringify(userNew));
     Swal.fire({
@@ -66,7 +66,8 @@ function registro() {
         timerProgressBar: true,
         allowOutsideClick: false,
     });
-    const userNewinJson = JSON.parse(localStorage.getItem('user'));
+    const usuarioEnJson = JSON.parse(localStorage.getItem('user'));
+    console.log(usuarioEnJson);
 
 }
 
@@ -74,6 +75,8 @@ function registro() {
 function signup(usuarioEnJson) {
     const emailEntrada = document.getElementById("email-login").value;
     const passwordEntrada = document.getElementById("showpass").value;
+    console.log(emailEntrada);
+    console.log(passwordEntrada);
 
     // emailEntrada === usuarioEnJson.email ? console.log("Ingresado Correctamente") : console.log("Datos incorrectos");
 

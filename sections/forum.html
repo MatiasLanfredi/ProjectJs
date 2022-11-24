@@ -13,43 +13,76 @@
   </head>
   <body>
     <!--HEADER-->
-    <header>ACA IRIA UN NAVBAR SI TAN SOLO TENDRIA UNO</header>
-    <div class="container__forum">
-      <div class="container__forum__header">
-        <div class="container__forum__header__content">
-          <h3 class="container__forum__header__content-title">
-            Create a new post
-          </h3>
-          <button class="btn btn-open">+</button>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__name">FrontFriends</h1>
+        <ul class="header__list">
+          <li class="header__item"><a href="../index.html">Home</a></li>
+          <li class="header__item"><a href="#">Services </a></li>
+          <li class="header__item">
+            <a href="../sections/forum.html">Forum</a>
+          </li>
+          <li class="header__item"><a href="#">Shop</a></li>
+          <li class="header__item"><a href="#">Chat</a></li>
+        </ul>
+        <a class="header__btn" href="../sections/login.html">Sign in</a>
+      </div>
+    </header>
+    <!-- FORUM CONTAINER -->
+    <main class="container__forum">
+      <div class="container__forum__center">
+        <div class="container__forum__center__header">
+          <h2>Share your doubts and knowledge with us!</h2>
+          <picture>
+            <img
+              src="../assets/images/reshot-illustration-social-media-conversation-XD45KL2N6J.png"
+              width="400px"
+              alt=""
+            />
+          </picture>
         </div>
-        <div class="date">
-          <div class="dateRight">
-            <div id="dateNumber"></div>
-            <div>
-              <div id="dateMonth"></div>
-              <div id="dateYear"></div>
+        <hr />
+        <div class="container__forum__center__top">
+          <!--MODAL FORM-->
+          <div class="modal-click">
+            <h3>Create a new Post</h3>
+            <button id="button-open">
+              <i class="uil uil-plus-circle"></i>
+            </button>
+          </div>
+          <!-- DIV INFO DATE-->
+          <div class="date">
+            <div class="dateRight">
+              <div id="dateText"></div>
+              <div id="dateNumber"></div>
+              <div>
+                <div id="dateMonth"></div>
+                <div id="dateYear"></div>
+              </div>
             </div>
           </div>
-          <div id="dateText"></div>
         </div>
+
+        <!--MODAL SECTION MODAL SECTION -->
         <section class="modal hidden">
           <div class="modal-header">
-            <img src="../assets/images/user.png" alt="user image" />
-            <h2>Create a new post</h2>
-            <button class="btn btn-close">X</button>
+            <picture>
+              <img src="../assets/images/user.png" alt="user image" />
+            </picture>
+            <h3>Create a new post</h3>
+            <button id="btn-close"><i class="uil uil-times"></i></button>
           </div>
-          <div class="modal__form">
-            <form class="modal__form__content" id="form">
-              <input
-                type="text"
-                name="title"
-                id="title-form"
-                placeholder="Title"
-              />
-              <select name="articulo-post" id="tipopost">
+          <div class="form__modal">
+            <form class="form__modal__content" id="form">
+              <input type="text" placeholder="Title" id="title-form" />
+              <!-- PREGUNTAR COMO HACER LO DE LA IMAGEN<input type="file"   id="imagenform" /> -->
+              <select name="articulo-post" id="type-post">
                 <option value="article">Article</option>
                 <option value="post">Post</option>
+                <option value="info">Info</option>
               </select>
+              <!-- HACER RESIZE TXT AREA IN CSS
+                     -->
               <textarea
                 name="form-txt-area"
                 id="form-txt-area"
@@ -57,26 +90,47 @@
                 rows="3"
                 placeholder="Content"
               ></textarea>
-              <button class="btn">Send</button>
+
+              <button type="submit" id="submit-form">
+                <i class="uil uil-message"></i>
+              </button>
             </form>
           </div>
         </section>
         <div class="overlay hidden"></div>
+        <div id="containerBlog"></div>
       </div>
-      <div class="container__forum__sorts">
-        <div class="container__forum__sorts-type">
-          <a href="#">Articles</a>
-          <a href="#">Posts</a>
-        </div>
-        <div class="container__forum__sorts-dateAgo">
-          <select name="" id="">
-            <option value="">Article</option>
-            <option value="">Post</option>
-          </select>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="footer__content">
+          <div class="footer__content-me">
+            <p><i class="uil uil-copyright"></i> 2022</p>
+            <p>Matias Lanfredi.</p>
+            <p>All Rights Reserved</p>
+          </div>
+          <div class="footer__content__info">
+            <ul class="footer__content__info__list">
+              <li class="footer__content__info__list-item">
+                <a href="#">About Company</a>
+              </li>
+              <li class="footer__content__info__list-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="footer__content__info__list-item">
+                <a href="#">Help Center</a>
+              </li>
+              <li class="footer__content__info__list-item">
+                <a href="#">Terms</a>
+              </li>
+              <li class="footer__content__info__list-item">
+                <a href="#">Site Map</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div id="tasksContainer"></div>
-    </div>
+    </footer>
     <script src="../assets/js/login.js"></script>
     <script src="../assets/js/datos.js"></script>
     <script src="../assets/js/forum.js"></script>

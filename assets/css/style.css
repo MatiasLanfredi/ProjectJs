@@ -14,8 +14,24 @@
   color: #20324a;
 }
 
+.container__forum__center #containerBlog .containerBlog__btns #dislike, .container__forum__center #containerBlog .containerBlog__btns #like {
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 1px 5px;
+  height: 20px;
+  width: 17px;
+  margin-right: 10px;
+  transition: all ease 0.3s;
+}
+.container__forum__center #containerBlog .containerBlog__btns #dislike:hover, .container__forum__center #containerBlog .containerBlog__btns #like:hover {
+  color: #fff;
+  border: 2px solid #000;
+}
+
 .body-login {
-  background-image: url(../images/bg4.jpg);
+  background-image: url(../images/bg6.jpg);
 }
 
 .main-login {
@@ -40,7 +56,9 @@
   justify-content: center;
   -webkit-backdrop-filter: blur(100px);
           backdrop-filter: blur(100px);
-  background-color: rgba(0, 128, 255, 0.5);
+  background-color: #6500ff;
+  border-radius: 16px;
+  border: 1px solid #ff5f61;
 }
 .container__back div {
   margin: 100px 40px;
@@ -67,8 +85,8 @@
 }
 .container__back div button:hover {
   background-color: #fff;
-  color: #46a2fd;
-  border: 2px solid #46a2fd;
+  color: #ff5f61;
+  border: 2px solid #ff5f61;
 }
 
 /* formularios */
@@ -93,9 +111,9 @@
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
-  color: #46a2fd;
+  color: #ff5f61;
 }
-.container__login-register form input {
+.container__login-register form input, .container__login-register form .modal .form__modal__content textarea, .modal .form__modal__content .container__login-register form textarea, .container__login-register form .modal .form__modal__content select, .modal .form__modal__content .container__login-register form select {
   width: 100%;
   margin-top: 20px;
   padding: 10px;
@@ -107,7 +125,7 @@
   margin-top: 40px;
   border: none;
   font-size: 14px;
-  background-color: #46a2fd;
+  background-color: #ff5f61;
   color: #fff;
   cursor: pointer;
 }
@@ -122,7 +140,7 @@
   color: rgba(0, 0, 0, 0.61);
   margin-top: 10px;
 }
-.container__login-register form .password-box input {
+.container__login-register form .password-box input, .container__login-register form .password-box .modal .form__modal__content textarea, .modal .form__modal__content .container__login-register form .password-box textarea, .container__login-register form .password-box .modal .form__modal__content select, .modal .form__modal__content .container__login-register form .password-box select {
   display: flex;
   width: auto;
   align-self: center;
@@ -132,6 +150,9 @@
 .form__login {
   opacity: 1;
   display: block;
+}
+.form__login h2 {
+  color: #ff5f61;
 }
 
 .form__register {
@@ -164,39 +185,140 @@
   }
 }
 .container__forum {
+  width: 100%;
+  padding-top: 20px;
+}
+.container__forum__center {
   width: 1111px;
-  border: 2px solid black;
-  display: grid;
-  place-content: center;
   margin: auto;
-  justify-content: center;
+}
+.container__forum__center__header {
+  display: flex;
   padding: 20px;
-}
-.container__forum__header {
-  width: 900px;
-  display: flex;
-  align-self: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-.container__forum__header__content {
+.container__forum__center__header h2 {
+  color: #000;
+}
+.container__forum__center hr {
+  color: #6500ff;
+  width: 70%;
+  margin: auto;
+}
+.container__forum__center__top {
+  margin: 20px 0px 20px 0px;
+  padding: 20px;
   display: flex;
-  gap: 30px;
-  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
 }
-.container__forum__header__content-title {
+.container__forum__center__top .modal-click {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 2rem;
+}
+.container__forum__center__top .modal-click h3 {
+  color: #ff5f61;
+}
+.container__forum__center__top .modal-click button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.container__forum__center__top .modal-click button i {
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  height: 20px;
+  padding: 4px 6px;
+  background-color: #6500ff;
+}
+.container__forum__center__top .date {
+  display: flex;
+}
+.container__forum__center__top .date .dateRight {
+  display: flex;
+  gap: 20px;
+  align-items: center;
   text-transform: uppercase;
-  letter-spacing: 1.1px;
+  font-weight: bold;
+  font-size: 2rem;
 }
-.container__forum__sorts {
+.container__forum__center__top .date .dateRight #dateText {
+  color: #ff5f61;
+}
+.container__forum__center__top .date .dateRight #dateNumber {
+  color: #6500ff;
+}
+.container__forum__center__top .date .dateRight #dateMonth,
+.container__forum__center__top .date .dateRight #dateYear {
+  color: #ff5f61;
+}
+.container__forum__center #containerBlog {
+  border: 2px solid #ff5f61;
+  border-radius: 16px;
+}
+.container__forum__center #containerBlog .containerBlog__card {
   display: flex;
-  width: 900px;
-  padding: 10px 15px;
-  justify-content: space-between;
+  gap: 60px;
+  align-items: center;
+  padding-left: 70px;
 }
-
-.hidden {
-  display: none;
+.container__forum__center #containerBlog .containerBlog__card picture img {
+  width: 250px;
+}
+.container__forum__center #containerBlog .containerBlog__content {
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  height: 280px;
+  flex-direction: column;
+  gap: 20px;
+}
+.container__forum__center #containerBlog .containerBlog__content h2 {
+  color: #20324a;
+  text-align: start;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.container__forum__center #containerBlog .containerBlog__content p, .container__forum__center #containerBlog .containerBlog__content .container__back div button, .container__back div .container__forum__center #containerBlog .containerBlog__content button {
+  color: #9e9e9e;
+  font-size: 0.9rem;
+}
+.container__forum__center #containerBlog .containerBlog__info {
+  font-size: 0.7rem;
+  display: flex;
+  gap: 20px;
+}
+.container__forum__center #containerBlog .containerBlog__btns {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0px 10px 0px 10px;
+}
+.container__forum__center #containerBlog .containerBlog__btns #like {
+  border: 2px solid springgreen;
+  transition: all ease 0.3s;
+}
+.container__forum__center #containerBlog .containerBlog__btns #like:hover {
+  background-color: springgreen;
+}
+.container__forum__center #containerBlog .containerBlog__btns #dislike {
+  border: 2px solid rgb(255, 44, 44);
+}
+.container__forum__center #containerBlog .containerBlog__btns #dislike:hover {
+  background-color: rgb(255, 44, 44);
+}
+.container__forum__center #containerBlog #buttonHearth {
+  display: flex;
+  justify-content: end;
+  padding: 10px 20px 5px 0px;
+  font-size: 1.4rem;
+  color: #6500ff;
+  cursor: pointer;
 }
 
 .modal {
@@ -207,18 +329,97 @@
   gap: 0.4rem;
   width: 750px;
   padding: 1.3rem;
-  height: 530px;
   position: absolute;
-  top: 20%;
-  background-color: white;
-  border: 1px solid #ddd;
+  top: 22%;
+  left: 33%;
+  background-color: #fff;
+  border: 3px solid #ff5f61;
   border-radius: 15px;
   z-index: 2;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header picture img {
+  border-radius: 20px;
+  border: 2px solid #6500ff;
+  width: 40px;
+}
+.modal-header h3 {
+  font-size: 2rem;
+  color: #6500ff;
+}
+.modal-header button {
+  outline: none;
+  border: 2px solid #6500ff;
+  border-radius: 20px;
+  color: #6500ff;
+  padding: 2px 5px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.modal-header button:hover {
+  background-color: #6500ff;
+  color: #fff;
+}
+.modal .form__modal {
+  width: 500px;
+  margin: auto;
+}
+.modal .form__modal__content {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.modal .form__modal__content input, .modal .form__modal__content textarea, .modal .form__modal__content select {
+  padding-left: 5px;
+  border: 1px solid #ff5f61;
+  color: #6500ff;
+}
+.modal .form__modal__content select {
+  width: 100px;
+  padding-left: 5px;
+  background-color: #fff;
+}
+.modal .form__modal__content textarea {
+  outline: none;
+  resize: none;
+}
+.modal .form__modal__content button {
+  width: 50px;
+  border-radius: 16px;
+  border: 1px solid #ff5f61;
+  background-color: #fff;
+  color: #6500ff;
+}
+.modal .form__modal__content button:hover {
+  background-color: #ff5f61;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
 }
 
 .header {
   width: 100%;
-  padding-top: 20px;
+  padding: 10px 0px 10px 0px;
   display: flex;
   justify-content: space-between;
   background-color: #6500ff;
@@ -435,7 +636,7 @@
 }
 .move__content__container__card {
   display: flex;
-  gap: 20px;
+  gap: 60px;
   align-items: center;
   padding: 30px;
 }

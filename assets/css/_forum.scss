@@ -1,37 +1,141 @@
 .container__forum {
-    width: 1111px;
-    border: 2px solid black;
-    display: grid;
-    place-content: center;
-    margin: auto;
-    justify-content: center;
-    padding: 20px;
-    &__header {
-        width: 900px;
-        display: flex;
-        align-self: center;
-        align-items: center;
-        justify-content: space-between;
-        &__content {
+    width: 100%;
+    padding-top: 20px;
+    &__center {
+        width: 1111px;
+        margin: auto;
+        &__header {
             display: flex;
-            gap: 30px;
-            padding: 15px;
-            &-title {
-                text-transform: uppercase;
-                letter-spacing: 1.1px;
+            padding: 20px;
+            align-items: center;
+            justify-content: space-around;
+            h2 {
+                color: #000;
+            }
+        }
+        hr {
+            color: $violet;
+            width: 70%;
+            margin: auto;
+        }
+        &__top {
+            margin: 20px 0px 20px 0px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .modal-click {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                font-size: 2rem;
+                h3 {
+                    color: $orange;
+                }
+                button {
+                    border: none;
+                    background-color: #fff;
+                    cursor: pointer;
+                    i {
+                        cursor: pointer;
+                        color: #fff;
+                        border: none;
+                        border-radius: 50%;
+                        height: 20px;
+                        padding: 4px 6px;
+                        background-color: $violet;
+                    }
+                }
+            }
+            .date {
+                display: flex;
+                .dateRight {
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 2rem;
+                    #dateText {
+                        color: $orange;
+                    }
+                    #dateNumber {
+                        color: $violet;
+                    }
+                    #dateMonth,
+                    #dateYear {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+        #containerBlog {
+            border: 2px solid $orange;
+            border-radius: 16px;
+            .containerBlog__card {
+                display: flex;
+                gap: 60px;
+                align-items: center;
+                padding-left: 70px;
+                picture {
+                    img {
+                        width: 250px;
+                    }
+                }
+            }
+            .containerBlog__content {
+                justify-content: center;
+
+                height: 100%;
+                display: flex;
+                height: 280px;
+                flex-direction: column;
+                gap: 20px;
+                h2 {
+                    color: $darkgrey;
+                    text-align: start;
+                    font-weight: 700;
+                    font-size: 2rem;
+                }
+                p {
+                    color: $greyTxt;
+                    font-size: 0.9rem;
+                }
+            }
+            .containerBlog__info {
+                font-size: 0.7rem;
+                display: flex;
+                gap: 20px;
+            }
+            .containerBlog__btns {
+                width: max-content;
+                padding: 0px 10px 0px 10px;
+                #like {
+                    @extend %buttonLikeDislike;
+                    border: 2px solid springgreen;
+                    transition: all ease 0.3s;
+                    &:hover {
+                        background-color: springgreen;
+                    }
+                }
+                #dislike {
+                    @extend %buttonLikeDislike;
+                    border: 2px solid rgb(255, 44, 44);
+                    &:hover {
+                        background-color: rgb(255, 44, 44);
+                    }
+                }
+            }
+            #buttonHearth {
+                display: flex;
+                justify-content: end;
+                padding: 10px 20px 5px 0px;
+                font-size: 1.4rem;
+                color: $violet;
+                cursor: pointer;
             }
         }
     }
-    &__sorts {
-        display: flex;
-        width: 900px;
-        padding: 10px 15px;
-        justify-content: space-between;
-    }
-}
-
-.hidden {
-    display: none;
 }
 .modal {
     display: flex;
@@ -41,11 +145,91 @@
     gap: 0.4rem;
     width: 750px;
     padding: 1.3rem;
-    height: 530px;
     position: absolute;
-    top: 20%;
-    background-color: white;
-    border: 1px solid #ddd;
+    top: 22%;
+    left: 33%;
+    background-color: #fff;
+    border: 3px solid $orange;
     border-radius: 15px;
     z-index: 2;
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        picture {
+            img {
+                border-radius: 20px;
+                border: 2px solid $violet;
+                width: 40px;
+            }
+        }
+        h3 {
+            font-size: 2rem;
+            color: $violet;
+        }
+        button {
+            outline: none;
+            border: 2px solid $violet;
+            border-radius: 20px;
+            color: $violet;
+            padding: 2px 5px;
+            background-color: #fff;
+            transition: 0.3s;
+            &:hover {
+                background-color: $violet;
+                color: #fff;
+            }
+        }
+    }
+    .form__modal {
+        width: 500px;
+        margin: auto;
+        &__content {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            input {
+                padding-left: 5px;
+                border: 1px solid $orange;
+                color: $violet;
+            }
+            select {
+                @extend input;
+                width: 100px;
+                padding-left: 5px;
+                background-color: #fff;
+            }
+            textarea {
+                @extend input;
+                outline: none;
+                resize: none;
+            }
+            button {
+                width: 50px;
+                border-radius: 16px;
+                border: 1px solid $orange;
+                background-color: #fff;
+                color: $violet;
+                &:hover {
+                    background-color: $orange;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.hidden {
+    display: none;
 }
