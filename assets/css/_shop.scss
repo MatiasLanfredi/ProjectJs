@@ -1,0 +1,139 @@
+.container__shop {
+    width: 100%;
+    padding-top: 20px;
+    &-div {
+        padding: 40px;
+        width: 1111px;
+        margin: auto;
+        background-color: $grey;
+    }
+    &-header {
+        &-searchbar {
+            display: flex;
+            input {
+                padding: 4px;
+                color: $greyTxt;
+                border: 1px solid $orange;
+                border-right: none;
+                outline: none;
+                height: 50px;
+                font-size: 1.3rem;
+                padding: 3px;
+            }
+            button {
+                color: $orange;
+                outline: none;
+                border: none;
+                height: 50px;
+                background-color: #fff;
+                border: 1px solid $orange;
+                border-left: none;
+                cursor: pointer;
+                font-size: 1.6rem;
+            }
+        }
+    }
+    &__content {
+        padding: 0px 10px;
+        display: flex;
+        justify-content: space-between;
+        &-panel {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            gap: 10px;
+            h3 {
+                font-size: 1.8rem;
+                color: $orange;
+                font-weight: 800;
+            }
+            &-category {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                li {
+                    a {
+                        font-size: 1rem;
+                        color: $violet;
+                        transition: 0.3s;
+                        &:hover {
+                            color: orange;
+                        }
+                    }
+                }
+            }
+        }
+        &-priceRange {
+            h3 {
+                font-size: 1.8rem;
+                color: $orange;
+                margin-bottom: 10px;
+                font-weight: 800;
+            }
+        }
+    }
+    &__products {
+        width: 100%;
+        padding: 15px;
+        &__card {
+            width: 250px;
+            border: 2px solid $violet;
+            overflow: hidden;
+            picture {
+                img {
+                    width: 250px;
+                }
+            }
+            &-details {
+                padding: 0px 5px 5px 5px;
+                display: flex;
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                    h4 {
+                        text-align: center;
+                        font-size: 2rem;
+                        color: $orange;
+                    }
+                    &-txt {
+                        display: flex;
+                        text-align: center;
+                        font-size: 0.8rem;
+                        color: $greyTxt;
+                    }
+                    &-price {
+                        font-weight: 800;
+                        color: $orange;
+                        text-align: center;
+                    }
+                    &-button {
+                        display: flex;
+                        margin: 10px 0px 10px 0px;
+                        align-self: center;
+                        width: max-content;
+                        color: #fff;
+                        background-color: $violet;
+                        border: 1px solid $orange;
+                        border-radius: 16px;
+                        padding: 4px 16px;
+                        cursor: pointer;
+                        gap: 10px;
+                        font-size: 0.9rem;
+                        align-items: center;
+                        font-weight: 400;
+                        transition: 0.3s;
+                        &:hover {
+                            background-color: $orange;
+                            color: #fff;
+                            border: 1px solid $violet;
+                        }
+                        i {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

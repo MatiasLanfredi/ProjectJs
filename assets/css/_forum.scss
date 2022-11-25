@@ -33,17 +33,28 @@
                     color: $orange;
                 }
                 button {
-                    border: none;
-                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                    background-color: $violet;
+                    height: 40px;
+                    border-radius: 50%;
                     cursor: pointer;
+                    border: none;
+                    outline: none;
+
+                    transition: 0.3s;
+                    &:hover {
+                        background-color: $orange;
+                    }
                     i {
+                        outline: none;
+                        border: none;
                         cursor: pointer;
                         color: #fff;
                         border: none;
-                        border-radius: 50%;
-                        height: 20px;
-                        padding: 4px 6px;
-                        background-color: $violet;
+                        font-size: 2rem;
                     }
                 }
             }
@@ -72,6 +83,7 @@
         #containerBlog {
             border: 2px solid $orange;
             border-radius: 16px;
+            padding-bottom: 15px;
             .containerBlog__card {
                 display: flex;
                 gap: 60px;
@@ -238,4 +250,11 @@
 }
 .hidden {
     display: none;
+}
+
+.emptyblogs {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    color: $greyTxt;
 }

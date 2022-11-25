@@ -10,10 +10,10 @@ const dateYear = document.getElementById('dateYear');
 
 const setDate = () => {
   const date = new Date();
-  dateNumber.textContent = date.toLocaleString('es', { day: 'numeric' });
-  dateText.textContent = date.toLocaleString('es', { weekday: 'long' });
-  dateMonth.textContent = date.toLocaleString('es', { month: 'short' });
-  dateYear.textContent = date.toLocaleString('es', { year: 'numeric' });
+  dateNumber.textContent = date.toLocaleString('en', { day: 'numeric' });
+  dateText.textContent = date.toLocaleString('en', { weekday: 'long' });
+  dateMonth.textContent = date.toLocaleString('en', { month: 'short' });
+  dateYear.textContent = date.toLocaleString('en', { year: 'numeric' });
 }
 
 setDate();
@@ -45,12 +45,8 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", validationForm);
 
-// ARRAY Q GUARDA ITEM Q TENIA , PUSHEAR , ARRAY DEL LOCAL.
-// CICLO FOR EACH
-
 const savedArticlesInJson = JSON.parse(localStorage.getItem("arrayArticles"));
 
-console.log(savedArticlesInJson);
 
 function validationForm(e) {
 
@@ -65,14 +61,13 @@ function validationForm(e) {
   const containerBlog = document.getElementById("containerBlog");
 
 
-  let article1 = new ContentBlog(titleBlog, typeBlog, contentBlog);
+  let article = new ContentBlog(titleBlog, typeBlog, contentBlog);
 
-  localStorage.setItem("blogPost", JSON.stringify(article1));
+  savedBlogs.push(article);
 
-  savedArticles.push(article1);
+  localStorage.setItem("blogPosted", JSON.stringify(savedBlogs));
 
-  console.log(savedArticles);
-
+  console.log(savedBlogs);
 
   containerBlog.innerHTML += `
     <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
@@ -99,11 +94,9 @@ function validationForm(e) {
               </div>
             </div>
           </div>
+          <hr>
+
     `
-  article1 = "";
-  console.log(article1);
-
-
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -118,43 +111,66 @@ function validationForm(e) {
 
   Toast.fire({
     icon: 'success',
-    title: 'Article created succesfully🎉'
+    iconColor: '#fff',
+    color: '#fff',
+    title: 'Article created succesfully🎉',
+    background: '#A5DC86',
+
   })
 }
 
-/* BLOG ALWAYS ON PAGE */
+/*============================ POSTS ALREADY SAVED PRINT ON DOM ==========================================*/
 
-// const containerBlog = document.getElementById("containerBlog");
+const printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
 
-// const savedArticlesInJson = JSON.parse(localStorage.getItem("arrayArticles"));
+console.log(printBlogs);
+for (const valor in printBlogs) {
+  console.log(printBlogs[valor]);
+}
 
-// console.log(savedArticlesInJson);
+const containerBlog = document.getElementById("containerBlog");
 
-// console.log(savedArticlesInJson.content);
+document.addEventListener('DOMContentLoaded', () => {
+  if (printBlogs !== null) {
+    containerBlog.innerHTML = ``;
 
-// containerBlog.innerHTML += `
-//     <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
-//           <div class="containerBlog__card">
-//             <picture>
-//               <img src="../assets/images/move2.svg" alt="image about post" />
-//             </picture>
-//             <div class="containerBlog__content">
-//               <h2>${savedArticlesInJson.title}</h2>
-//               <p>
-//                 ${savedArticlesInJson.typePost}
-//               </p>
-//               <div class="containerBlog__info">
-//                 <a class="containerBlog-typePost" href="#">${savedArticlesInJson.content}</a>
-//                 <span class="containerBlog-timePost">42 min ago</span>
-//                 <a class="containerBlog-userPost" href="#">User</a>
-//               </div>
-//               <div class="containerBlog__btns">
-//                 <i id="like" class="uil uil-thumbs-up green"></i>
-//                 <i id="dislike" class="uil uil-thumbs-down red"></i>
-//                 <i id="view-ico" class="uil uil-eye view">
-//                   <span id="view-number" class="count-visit">1</span>
-//                 </i>
-//               </div>
-//             </div>
-//           </div>
-//     `
+    printBlogs.forEach(blog => {
+      containerBlog.innerHTML += `
+      <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
+            <div class="containerBlog__card">
+              <picture>
+                <img src="../assets/images/move2.svg" alt="image about post" />
+              </picture>
+              <div class="containerBlog__content">
+                <h2>${blog.titleBlog}</h2>
+                <p>
+                  ${blog.contentBlog}
+                </p>
+                <div class="containerBlog__info">
+                  <a class="containerBlog-typePost" href="#">${blog.typeBlog}</a>
+                  <span class="containerBlog-timePost">42 min ago</span>
+                  <a class="containerBlog-userPost" href="#">User</a>
+                </div>
+                <div class="containerBlog__btns">
+                  <i id="like" class="uil uil-thumbs-up green"></i>
+                  <i id="dislike" class="uil uil-thumbs-down red"></i>
+                  <i id="view-ico" class="uil uil-eye view">
+                    <span id="view-number" class="count-visit">1</span>
+                  </i>
+                </div>
+              </div>
+            </div>
+            <hr>
+  
+      `
+    });
+  } else {
+    containerBlog.innerHTML = `
+    <div class="emptyblogs">
+    <h3 class="emptyblogs__txt">
+      Hey! Actually this is empty 😔. Please, create a new Post 💡
+    </h3>
+  </div>
+    `
+  }
+})

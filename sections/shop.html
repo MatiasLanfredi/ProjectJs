@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,46 +33,80 @@
 
     <!--TESTING -->
     <main class="container__shop">
-      <div class="container__shop-header">
-        <div class="container__shop-searchbar">
-          <input
-            type="text"
-            placeholder="Search a product"
-            class="form-control"
-            id="product-search"
-          />
-          <!-- <div>
+      <div class="container__shop-div">
+        <div class="container__shop-header">
+          <div class="container__shop-header-searchbar">
+            <input
+              type="text"
+              placeholder="Search a product"
+              class="form-control"
+              id="product-search"
+            />
+            <button><i class="uil uil-search"></i></button>
+            <!-- <div>
             AGREGAR ALGO PARA Q NO QUEDE VACIO
           </div> -->
-        </div>
-      </div>
-      <section class="container__shop__content">
-        <div class="container__shop__content-panel">
-          <h3>Category</h3>
-          <ul class="container__shop__content-category">
-            <li>
-              <a href="#" class="active">- All Products</a>
-              <ul class="container__shop__content-nav">
-                <li><a href="#">- HTML</a></li>
-                <li><a href="#">- CSS</a></li>
-                <li><a href="#">- Javascript</a></li>
-                <li><a href="#">- React</a></li>
-                <li><a href="#">- Vue</a></li>
-                <li><a href="#">- Angular</a></li>
-                <li><a href="#">- Node.js</a></li>
-                <li><a href="#">- Tailwind</a></li>
-                <li><a href="#">- Sass</a></li>
-                <li><a href="#">- Bootstrap</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="container__shop__content-priceRange">
-            <h3>Price Range</h3>
-            <input type="range" id="vol" name="vol" min="1000" max="10000" />
           </div>
         </div>
-        <div class="container__shop__products"></div>
-      </section>
+        <section class="container__shop__content">
+          <div class="container__shop__content-panel">
+            <h3>Category</h3>
+            <ul class="container__shop__content-panel-category">
+              <li><a href="#" class="active">- All Products</a></li>
+              <li><a href="#">- HTML</a></li>
+              <li><a href="#">- CSS</a></li>
+              <li><a href="#">- Javascript</a></li>
+              <li><a href="#">- React</a></li>
+              <li><a href="#">- Vue</a></li>
+              <li><a href="#">- Angular</a></li>
+              <li><a href="#">- Node.js</a></li>
+              <li><a href="#">- Tailwind</a></li>
+              <li><a href="#">- Sass</a></li>
+              <li><a href="#">- Bootstrap</a></li>
+            </ul>
+            <div class="container__shop__content-priceRange">
+              <h3>Price Range</h3>
+              <input
+                type="range"
+                id="vol"
+                name="vol"
+                value="2000"
+                min="1000"
+                max="10000"
+              />
+            </div>
+          </div>
+          <div class="container__shop__products">
+            <div class="container__shop__products__card">
+              <picture>
+                <img src="../assets/images/productoHtml.png" alt="" />
+              </picture>
+              <div class="container__shop__products__card-details">
+                <div class="container__shop__products__card-details-content">
+                  <h4>HTML</h4>
+                  <p
+                    class="container__shop__products__card-details-content-txt"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolores laudantium rerum dolorum, nostrum quos fugiat totam
+                  </p>
+                  <p
+                    class="container__shop__products__card-details-content-price"
+                  >
+                    $<span>1000</span>
+                  </p>
+                  <button
+                    class="container__shop__products__card-details-content-button"
+                    id="addtoCart"
+                  >
+                    Agregar <i class="uil uil-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <!-- <div class="container bootdey">
       <div class="col-md-3">

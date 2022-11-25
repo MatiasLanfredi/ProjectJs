@@ -28,11 +28,6 @@ const savedArticles = [
     },
 ]
 
-localStorage.setItem("arrayArticles", JSON.stringify(savedArticles));
-
-
-//  localStorage.setItem("blogPost", JSON.stringify(article1));
-
 const savedBlogs = [];
 
 

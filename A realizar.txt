@@ -1,0 +1,9 @@
+onloaded -> !== null 
+	hacer:
+		vaciar inner container
+		
+
+
+
+	si es null:
+		printf " it is empty"
