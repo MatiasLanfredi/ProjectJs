@@ -1,6 +1,7 @@
 'use strict';
-/*==========VARIABLES=========*/
 
+/*==========VARIABLES=========*/
+const usersArray = [];
 const containerLoginRegister = document.querySelector(".container__login-register")
 const formularioLogin = document.querySelector(".form__login");
 const formularioRegister = document.querySelector(".form__register");
@@ -23,9 +24,9 @@ checkButton.addEventListener("click", showpassword);
 
 checkButton2.addEventListener("click", showpassword2);
 
-const usuarioEnJson = JSON.parse(localStorage.getItem('user'));
+const usuarioEnJson = JSON.parse(localStorage.getItem('users'));
 
-
+console.log(usuarioEnJson);
 
 /* ============FORM LOGIN============= */
 
@@ -34,6 +35,7 @@ const iniciarSesion = document.getElementById("iniciar-sesion");
 iniciarSesion.addEventListener("click", function (e) {
     e.preventDefault()
     signup(usuarioEnJson)
+
 });
 
 /* ============FORM REGISTER ============= */
@@ -56,9 +58,12 @@ function registro() {
 
     const userNew = new Users(nameUserNew, emailUserNew, usuarioUserNew, passwordUserNew);
 
-    localStorage.setItem('user', JSON.stringify(userNew));
+    usersRegistered.push(userNew);
+
+    localStorage.setItem('users', JSON.stringify(usersRegistered));
+
     Swal.fire({
-        title: "Registrado Correctamente",
+        title: "Successful registration",
         icon: 'success',
         width: '40%',
         backdrop: true,
@@ -66,24 +71,24 @@ function registro() {
         timerProgressBar: true,
         allowOutsideClick: false,
     });
-    const usuarioEnJson = JSON.parse(localStorage.getItem('user'));
-    console.log(usuarioEnJson);
-
 }
 
 
 function signup(usuarioEnJson) {
+
+    console.log(usuarioEnJson);
+
     const emailEntrada = document.getElementById("email-login").value;
     const passwordEntrada = document.getElementById("showpass").value;
-    console.log(emailEntrada);
-    console.log(passwordEntrada);
 
-    // emailEntrada === usuarioEnJson.email ? console.log("Ingresado Correctamente") : console.log("Datos incorrectos");
+    for (let userObjects of usuarioEnJson) {
+        Object.values(userObjects).forEach(valor => usersArray.push(valor));
 
-    if (emailEntrada === usuarioEnJson.email && passwordEntrada === usuarioEnJson.password) {
+    }
+    if (usersArray.includes(emailEntrada) && usersArray.includes(passwordEntrada)) {
         Swal.fire({
-            title: "Sesion Iniciada",
-            // icon: 'success',
+            title: "Login successful",
+            text: 'Hey! Wait, you wil be redirected',
             icon: 'success',
             width: '40%',
             backdrop: true,
@@ -91,6 +96,11 @@ function signup(usuarioEnJson) {
             timerProgressBar: true,
             allowOutsideClick: false,
         });
+
+        setTimeout(() => {
+            window.location.href = "../../index.html";
+        }, 3000)
+
     } else {
         Swal.fire({
             title: "Datos Incorrectos",

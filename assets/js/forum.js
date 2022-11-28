@@ -1,5 +1,7 @@
 'use strict';
 
+const arrayBlogs = [];
+
 /*======================INFO DATE ================================= */
 const dateNumber = document.getElementById('dateNumber');
 const dateText = document.getElementById('dateText');
@@ -45,7 +47,9 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", validationForm);
 
-const savedArticlesInJson = JSON.parse(localStorage.getItem("arrayArticles"));
+
+// const savedArticlesInJson = JSON.parse(localStorage.getItem("arrayArticles"));
+
 
 
 function validationForm(e) {
@@ -63,11 +67,13 @@ function validationForm(e) {
 
   let article = new ContentBlog(titleBlog, typeBlog, contentBlog);
 
+  //VALIDACION LENGTH ARRAY DEL LOCAL = ""
+
   savedBlogs.push(article);
 
-  localStorage.setItem("blogPosted", JSON.stringify(savedBlogs));
-
   console.log(savedBlogs);
+
+  localStorage.setItem("blogPosted", JSON.stringify(savedBlogs));
 
   containerBlog.innerHTML += `
     <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
@@ -95,7 +101,6 @@ function validationForm(e) {
             </div>
           </div>
           <hr>
-
     `
   const Toast = Swal.mixin({
     toast: true,
@@ -108,7 +113,6 @@ function validationForm(e) {
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
   })
-
   Toast.fire({
     icon: 'success',
     iconColor: '#fff',
@@ -119,58 +123,59 @@ function validationForm(e) {
   })
 }
 
-/*============================ POSTS ALREADY SAVED PRINT ON DOM ==========================================*/
+/*============================ POSTS ALREADY SAVED  ==========================================*/
+
+
+const containerBlog = document.getElementById("containerBlog");
 
 const printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
 
 console.log(printBlogs);
-for (const valor in printBlogs) {
-  console.log(printBlogs[valor]);
-}
 
-const containerBlog = document.getElementById("containerBlog");
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (printBlogs !== null) {
-    containerBlog.innerHTML = ``;
+if (printBlogs !== null) {
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // for (let objectInArray of printBlogs) {
+    //   Object.values(objectInArray).forEach(val => arrayBlogs.push(val));
+    // };
 
     printBlogs.forEach(blog => {
       containerBlog.innerHTML += `
-      <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
-            <div class="containerBlog__card">
-              <picture>
-                <img src="../assets/images/move2.svg" alt="image about post" />
-              </picture>
-              <div class="containerBlog__content">
-                <h2>${blog.titleBlog}</h2>
-                <p>
-                  ${blog.contentBlog}
-                </p>
-                <div class="containerBlog__info">
-                  <a class="containerBlog-typePost" href="#">${blog.typeBlog}</a>
-                  <span class="containerBlog-timePost">42 min ago</span>
-                  <a class="containerBlog-userPost" href="#">User</a>
-                </div>
-                <div class="containerBlog__btns">
-                  <i id="like" class="uil uil-thumbs-up green"></i>
-                  <i id="dislike" class="uil uil-thumbs-down red"></i>
-                  <i id="view-ico" class="uil uil-eye view">
-                    <span id="view-number" class="count-visit">1</span>
-                  </i>
-                </div>
-              </div>
+        <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
+         <div class="containerBlog__card">
+            <picture>
+              <img src="../assets/images/move2.svg" alt="image about post" />
+            </picture>
+            <div class="containerBlog__content">
+              <h2>${blog.title}</h2>
+              <p>
+                ${blog.content}
+              </p>
+            <div class="containerBlog__info">
+              <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+              <span class="containerBlog-timePost">42 min ago</span>
+              <a class="containerBlog-userPost" href="#">User</a>
             </div>
-            <hr>
-  
-      `
+            <div class="containerBlog__btns">
+              <i id="like" class="uil uil-thumbs-up green"></i>
+              <i id="dislike" class="uil uil-thumbs-down red"></i>
+              <i id="view-ico" class="uil uil-eye view">
+                <span id="view-number" class="count-visit">1</span>
+              </i>
+            </div>
+          </div>
+        </div>
+        <hr>
+        `;
     });
-  } else {
-    containerBlog.innerHTML = `
+  });
+} else {
+  containerBlog.innerHTML = `
     <div class="emptyblogs">
-    <h3 class="emptyblogs__txt">
-      Hey! Actually this is empty 😔. Please, create a new Post 💡
-    </h3>
-  </div>
-    `
-  }
-})
+      <h3 class="emptyblogs__txt">
+        Hey! Actually this is empty 😔. Please, create a new Post 💡
+      </h3>
+    </div>
+     `
+}

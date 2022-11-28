@@ -5,7 +5,6 @@
         padding: 40px;
         width: 1111px;
         margin: auto;
-        background-color: $grey;
     }
     &-header {
         &-searchbar {
@@ -30,6 +29,7 @@
                 border-left: none;
                 cursor: pointer;
                 font-size: 1.6rem;
+                padding-right: 10px;
             }
         }
     }
@@ -37,6 +37,7 @@
         padding: 0px 10px;
         display: flex;
         justify-content: space-between;
+        margin-top: 5px;
         &-panel {
             display: flex;
             flex-direction: column;
@@ -51,12 +52,18 @@
                 list-style: none;
                 display: flex;
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
                 li {
+                    cursor: pointer;
+                    button,
                     a {
+                        border: none;
+                        background-color: #fff;
                         font-size: 1rem;
                         color: $violet;
                         transition: 0.3s;
+                        text-align: left;
+                        cursor: pointer;
                         &:hover {
                             color: orange;
                         }
@@ -76,13 +83,22 @@
     &__products {
         width: 100%;
         padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-around;
         &__card {
-            width: 250px;
+            width: 300px;
+            height: 375px;
             border: 2px solid $violet;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-radius: 16px;
             picture {
                 img {
-                    width: 250px;
+                    width: 100%;
                 }
             }
             &-details {
@@ -100,7 +116,6 @@
                         display: flex;
                         text-align: center;
                         font-size: 0.8rem;
-                        color: $greyTxt;
                     }
                     &-price {
                         font-weight: 800;
@@ -135,5 +150,16 @@
                 }
             }
         }
+        &-title {
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            font-size: 2rem;
+            padding: 20px;
+        }
+    }
+
+    .active {
+        color: $orange;
     }
 }

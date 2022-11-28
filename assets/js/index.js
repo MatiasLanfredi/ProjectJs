@@ -45,3 +45,13 @@ function showOnScroll() {
 
 }
 window.addEventListener('scroll', showOnScroll);
+
+
+/* ================== INPUT EMAIL RESET ==================== */
+
+document.addEventListener('DOMContentLoaded', function () {
+    let inputEmail = document.getElementById("emailButtonNewsletter");
+    inputEmail.addEventListener('submit', function () {
+        inputEmail.reset();
+    })
+})

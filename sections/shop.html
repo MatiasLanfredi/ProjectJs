@@ -8,9 +8,10 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
     <!--  ICON PNG LINK -->
     <link rel="icon" href="../assets/images/iconPage.png" />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <title>FrontFriends | Shop</title>
   </head>
   <body>
@@ -52,19 +53,33 @@
           <div class="container__shop__content-panel">
             <h3>Category</h3>
             <ul class="container__shop__content-panel-category">
-              <li><a href="#" class="active">- All Products</a></li>
-              <li><a href="#">- HTML</a></li>
-              <li><a href="#">- CSS</a></li>
-              <li><a href="#">- Javascript</a></li>
-              <li><a href="#">- React</a></li>
-              <li><a href="#">- Vue</a></li>
-              <li><a href="#">- Angular</a></li>
-              <li><a href="#">- Node.js</a></li>
-              <li><a href="#">- Tailwind</a></li>
-              <li><a href="#">- Sass</a></li>
-              <li><a href="#">- Bootstrap</a></li>
+              <li>
+                <button class="button-category" id="all">All Products</button>
+              </li>
+              <li>
+                <button class="button-category" id="webdevelopment">
+                  Web Development
+                </button>
+              </li>
+              <li>
+                <button class="button-category" id="datascience">
+                  Data Science
+                </button>
+              </li>
+              <li>
+                <button class="button-category" id="softwareenginneering">
+                  Software Engineering
+                </button>
+              </li>
+              <li>
+                <a href="./cart.html" class="button-cart">
+                  Cart
+                  <i class="uil uil-shopping-cart"></i>
+                  <span id="articlesNumber" class="cart-number">0</span>
+                </a>
+              </li>
             </ul>
-            <div class="container__shop__content-priceRange">
+            <!-- <div class="container__shop__content-priceRange">
               <h3>Price Range</h3>
               <input
                 type="range"
@@ -74,392 +89,18 @@
                 min="1000"
                 max="10000"
               />
-            </div>
+            </div> -->
           </div>
-          <div class="container__shop__products">
-            <div class="container__shop__products__card">
-              <picture>
-                <img src="../assets/images/productoHtml.png" alt="" />
-              </picture>
-              <div class="container__shop__products__card-details">
-                <div class="container__shop__products__card-details-content">
-                  <h4>HTML</h4>
-                  <p
-                    class="container__shop__products__card-details-content-txt"
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolores laudantium rerum dolorum, nostrum quos fugiat totam
-                  </p>
-                  <p
-                    class="container__shop__products__card-details-content-price"
-                  >
-                    $<span>1000</span>
-                  </p>
-                  <button
-                    class="container__shop__products__card-details-content-button"
-                    id="addtoCart"
-                  >
-                    Agregar <i class="uil uil-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div>
+            <div
+              class="container__shop__products-title"
+              id="titleContainer"
+            ></div>
+            <div class="container__shop__products" id="shopContainer"></div>
           </div>
         </section>
       </div>
     </main>
-    <!-- <div class="container bootdey">
-      <div class="col-md-3">
-        <section class="panel">
-          <div class="panel-body">
-            <input
-              type="text"
-              placeholder="Keyword Search"
-              class="form-control"
-            />
-          </div>
-        </section>
-        <section class="panel">
-          <header class="panel-heading">Category</header>
-          <div class="panel-body">
-            <ul class="nav prod-cat">
-              <li>
-                <a href="#" class="active"
-                  ></i>- All Products</a
-                >
-                <ul class="nav">
-                  <li> <a href="">- HTML</a></li>
-                  <li class="active"><a href="#">- CSS</a></li>
-                  <li><a href="#">- Javascript</a></li>
-                  <li><a href="#">- React</a></li>
-                  <li><a href="#">- Vue</a></li>
-                  <li><a href="#">- Angular</a></li>
-                  <li><a href="#">- Node.js</a></li>
-                  <li><a href="#">- Tailwind</a></li>
-                  <li><a href="#">- Sass</a></li>
-                  <li><a href="#">- Bootstrap</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="panel">
-          <header class="panel-heading">Price Range</header>
-          <div class="panel-body sliders">
-            <div id="slider-range" class="slider"></div>
-            <div class="slider-info">
-              <span id="slider-range-amount"></span>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div class="col-md-9">
-
-        <div class="row product-list">
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/FFB6C1/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/6495ED/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/FF7F50/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/00BFFF/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/00CED1/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/9400D3/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/FFD700/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/ADD8E6/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/20B2AA/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/3CB371/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/FFB6C1/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/C71585/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/191970/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/87CEEB/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-          <div class="col-md-4">
-            <section class="panel">
-              <div class="pro-img-box">
-                <img
-                  src="https://via.placeholder.com/250x220/FFB6C1/000000"
-                  alt=""
-                />
-                <a href="#" class="adtocart">
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-              </div>
-
-              <div class="panel-body text-center">
-                <h4>
-                  <a href="#" class="pro-title"> Leopard Shirt Dress </a>
-                </h4>
-                <p class="price">$300.00</p>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!--TESTING -->
     <footer>
       <div class="footer">
         <div class="footer__content">
@@ -493,6 +134,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/js/login.js"></script>
     <script src="../assets/js/datos.js"></script>
-    <script src="../assets/js/forum.js"></script>
+    <script src="../assets/js/shop.js"></script>
   </body>
 </html>
