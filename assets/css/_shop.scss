@@ -90,7 +90,7 @@
         justify-content: space-around;
         &__card {
             width: 300px;
-            height: 375px;
+            height: 370px;
             border: 2px solid $violet;
             overflow: hidden;
             display: flex;
@@ -129,7 +129,7 @@
                         width: max-content;
                         color: #fff;
                         background-color: $violet;
-                        border: 1px solid $orange;
+                        border: none;
                         border-radius: 16px;
                         padding: 4px 16px;
                         cursor: pointer;
@@ -139,9 +139,7 @@
                         font-weight: 400;
                         transition: 0.3s;
                         &:hover {
-                            background-color: $orange;
-                            color: #fff;
-                            border: 1px solid $violet;
+                            background-color: #8331fd;
                         }
                         i {
                             font-size: 1.1rem;

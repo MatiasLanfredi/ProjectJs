@@ -41,7 +41,7 @@ const products = [
             name: 'Webdevelopment',
             id: 'webdevelopment'
         },
-        price: 1000
+        price: 1000,
     },
     {
         id: "web-development-02",

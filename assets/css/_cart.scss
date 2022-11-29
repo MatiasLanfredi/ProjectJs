@@ -1,3 +1,6 @@
+.hidden {
+    display: none;
+}
 .cart {
     width: 1111px;
     margin: auto;
@@ -137,62 +140,3 @@
         }
     }
 }
-
-// .cart {
-//     &-body {
-//         background-color: $grey;
-//         height: 80vh;
-//         padding-top: 20px;
-//     }
-//     &__header {
-//         width: 1111px;
-//         margin: auto;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         padding: 15px;
-//         h2 {
-//             display: flex;
-//             text-align: center;
-//             margin: auto;
-//             padding-left: 200px;
-//         }
-//         a {
-//             align-self: flex-start;
-//         }
-//     }
-//     &__container {
-//         width: 1111px;
-//         margin: auto;
-//         padding: 50px;
-//         border: 2px solid;
-//         border-image-slice: 1;
-//         border-width: 5px;
-//         border-image-source: linear-gradient(45deg, $orange, $violet);
-//         #legendEmpty {
-//             text-align: center;
-//             letter-spacing: 1.5px;
-//             font-weight: 700;
-//             font-size: 1.5rem;
-//             margin: 10px;
-//             color: $greyTxt;
-//         }
-//         &__content {
-//             &__card {
-//                 display: flex;
-//                 justify-content: space-between;
-//                 align-items: center;
-//                 padding: 15px;
-//
-//             }
-//             hr {
-//                 color: $grey;
-//                 width: 70%;
-//                 margin: auto;
-//             }
-//         }
-//     }
-//     // .hidden {
-//     //     display: none;
-//     // }
-// }

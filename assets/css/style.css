@@ -938,7 +938,7 @@
 }
 .container__shop__products__card {
   width: 300px;
-  height: 375px;
+  height: 370px;
   border: 2px solid #6500ff;
   overflow: hidden;
   display: flex;
@@ -980,7 +980,7 @@
   width: max-content;
   color: #fff;
   background-color: #6500ff;
-  border: 1px solid #ff5f61;
+  border: none;
   border-radius: 16px;
   padding: 4px 16px;
   cursor: pointer;
@@ -991,9 +991,7 @@
   transition: 0.3s;
 }
 .container__shop__products__card-details-content-button:hover {
-  background-color: #ff5f61;
-  color: #fff;
-  border: 1px solid #6500ff;
+  background-color: #8331fd;
 }
 .container__shop__products__card-details-content-button i {
   font-size: 1.1rem;

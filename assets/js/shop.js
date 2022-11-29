@@ -60,7 +60,6 @@ buttonsCategory.forEach(button => {
       const productsFilter = products.filter(product => product.category.id === e.currentTarget.id);
       loadProducts(productsFilter);
 
-
     } else {
       titleContainer.innerHTML = "All Products"
       loadProducts(products);
@@ -78,6 +77,9 @@ function addtoCartButtons() {
 }
 
 const productsCart = [];
+
+const productCartinJson = JSON.parse(localStorage.getItem("productsCart"));
+
 
 function addToCart(e) {
   const idButton = e.currentTarget.id;

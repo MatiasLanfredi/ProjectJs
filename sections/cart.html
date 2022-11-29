@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!--  ICON PNG LINK -->
     <link rel="icon" href="../assets/images/iconPage.png" />
 
@@ -38,37 +37,21 @@
       </div>
       <div class="cart__container">
         <section class="cart__container__products">
-          <p id="legendEmpty">Your cart is empty😔</p>
-          <div id="containerProducts" class="cart__container__products__content" >
-            <!-- <div class="cart__container__products__content__card">
-              <div class="cart__container__products__content__card-flex">
-                <picture>
-                  <img src="../assets/images/productoJs.webp" alt="">
-                </picture>
-                <div class="cart__container__products__content__card-title">
-                  <h4>Curso de Javascript</h4>
-                  <p>By Autor</p>
-                </div>
-                <div class="cart__container__products__content__card-price">
-                  <h4>Price:</h4>
-                  <p>$1000</p>
-                </div>
-                <button class="cart__container__products__content__card-deleteButton">
-                  <i class="bi bi-trash-fill"></i></button>
-                </div>
-              </div> -->
+          <!-- <p id="legendEmpty">Your cart is empty😔</p>  -->
+          <div id="containerProducts" class="cart__container__products__content" >                                                
           </div>
         </section>
-        <section class="cart__container__checkout">
+        <section id="operationsButtons" class="cart__container__checkout">
           <div class="cart__container__checkout__card">
             <div class="cart__container__checkout__card-price">
               <p>Total:</p>
               <span>$4000</span>
             </div> 
-            <div>
-              <button class="cart__container__checkout__card-checkout">
+            <div class="cart__container__checkout-btns">
+              <button id="buyCart" class="cart__container__checkout__card-checkout">
                 Checkout
               </button>
+              <button id="deleteCart">Delete Products</button>
             </div>
           </div>
         </section>
@@ -112,3 +95,20 @@
     </body>
   </body>
 </html>
+     <!-- <div class="cart__container__products__content__card">
+              <div class="cart__container__products__content__card-flex">
+                <picture>
+                  <img src="../assets/images/productoJs.webp" alt="">
+                </picture>
+                <div class="cart__container__products__content__card-title">
+                  <h4>Curso de Javascript</h4>
+                  <p>By Autor</p>
+                </div>
+                <div class="cart__container__products__content__card-price">
+                  <h4>Price:</h4>
+                  <p>$1000</p>
+                </div>
+                <button class="cart__container__products__content__card-deleteButton">
+                  <i class="bi bi-trash-fill"></i></button>
+                </div>
+              </div> -->
