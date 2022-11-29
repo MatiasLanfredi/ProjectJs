@@ -1,6 +1,9 @@
 'use strict';
 
 const arrayBlogs = [];
+const infoArray = [];
+const articleArray = [];
+const postArray = [];
 
 /*======================INFO DATE ================================= */
 const dateNumber = document.getElementById('dateNumber');
@@ -48,13 +51,13 @@ const form = document.getElementById("form");
 form.addEventListener("submit", validationForm);
 
 
-// const savedArticlesInJson = JSON.parse(localStorage.getItem("arrayArticles"));
-
-
-
 function validationForm(e) {
 
   e.preventDefault();
+
+  const deleteEmptyContent = document.getElementById("emptyTitle");
+
+  deleteEmptyContent.classList.add("hidden");
 
   const titleBlog = document.getElementById("title-form").value;
 
@@ -67,15 +70,25 @@ function validationForm(e) {
 
   let article = new ContentBlog(titleBlog, typeBlog, contentBlog);
 
-  //VALIDACION LENGTH ARRAY DEL LOCAL = ""
-
+  switch (article.typePost) {
+    case "info":
+      infoArray.push(article);
+      break;
+    case "post":
+      postArray.push(article);
+      break;
+    case "article":
+      articleArray.push(article);
+      break;
+  }
   savedBlogs.push(article);
 
-  console.log(savedBlogs);
 
   localStorage.setItem("blogPosted", JSON.stringify(savedBlogs));
 
-  containerBlog.innerHTML += `
+  const div = document.createElement('div');
+
+  div.innerHTML += `
     <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
           <div class="containerBlog__card">
             <picture>
@@ -102,6 +115,8 @@ function validationForm(e) {
           </div>
           <hr>
     `
+  containerBlog.append(div);
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -130,15 +145,11 @@ const containerBlog = document.getElementById("containerBlog");
 
 const printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
 
-console.log(printBlogs);
-
-
 if (printBlogs !== null) {
   document.addEventListener('DOMContentLoaded', () => {
+    const deleteEmptyContent = document.getElementById("emptyTitle");
 
-    // for (let objectInArray of printBlogs) {
-    //   Object.values(objectInArray).forEach(val => arrayBlogs.push(val));
-    // };
+    deleteEmptyContent.classList.add("hidden");
 
     printBlogs.forEach(blog => {
       containerBlog.innerHTML += `
@@ -170,12 +181,114 @@ if (printBlogs !== null) {
         `;
     });
   });
-} else {
-  containerBlog.innerHTML = `
-    <div class="emptyblogs">
-      <h3 class="emptyblogs__txt">
-        Hey! Actually this is empty 😔. Please, create a new Post 💡
-      </h3>
-    </div>
-     `
+}
+
+/* ======================= FILTERS ================================ */
+
+const buttonSelect = document.getElementById("buttonSelect");
+const buttonArticle = document.getElementById("article").value
+const buttonInfo = document.getElementById("info").value
+const buttonPost = document.getElementById("post").value
+
+buttonSelect.addEventListener('click', reloadContent);
+
+function reloadContent() {
+  console.log(buttonSelect.value);
+
+  switch (buttonSelect.value) {
+    case "article":
+      articleArray.forEach(article => {
+        containerBlog.innerHTML += `
+         <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
+          <div class="containerBlog__card">
+           <picture>
+             <img src="../assets/images/move2.svg" alt="image about post" />
+           </picture>
+           <div class="containerBlog__content">
+             <h2>${blog.title}</h2>
+             <p>
+               ${blog.content}
+             </p>
+           <div class="containerBlog__info">
+             <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+             <span class="containerBlog-timePost">42 min ago</span>
+             <a class="containerBlog-userPost" href="#">User</a>
+           </div>
+           <div class="containerBlog__btns">
+             <i id="like" class="uil uil-thumbs-up green"></i>
+             <i id="dislike" class="uil uil-thumbs-down red"></i>
+             <i id="view-ico" class="uil uil-eye view">
+               <span id="view-number" class="count-visit">1</span>
+             </i>
+           </div>
+         </div>
+       </div>
+       <hr>
+        `
+      });
+      break;
+    case "post":
+      postArray.forEach(post => {
+        containerBlog.innerHTML += `
+         <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
+          <div class="containerBlog__card">
+           <picture>
+             <img src="../assets/images/move2.svg" alt="image about post" />
+           </picture>
+           <div class="containerBlog__content">
+             <h2>${blog.title}</h2>
+             <p>
+               ${blog.content}
+             </p>
+           <div class="containerBlog__info">
+             <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+             <span class="containerBlog-timePost">42 min ago</span>
+             <a class="containerBlog-userPost" href="#">User</a>
+           </div>
+           <div class="containerBlog__btns">
+             <i id="like" class="uil uil-thumbs-up green"></i>
+             <i id="dislike" class="uil uil-thumbs-down red"></i>
+             <i id="view-ico" class="uil uil-eye view">
+               <span id="view-number" class="count-visit">1</span>
+             </i>
+           </div>
+         </div>
+       </div>
+       <hr>
+        `
+      });
+      break;
+    case "info":
+      infoArray.forEach(info => {
+        containerBlog.innerHTML += `
+         <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
+          <div class="containerBlog__card">
+           <picture>
+             <img src="../assets/images/move2.svg" alt="image about post" />
+           </picture>
+           <div class="containerBlog__content">
+             <h2>${blog.title}</h2>
+             <p>
+               ${blog.content}
+             </p>
+           <div class="containerBlog__info">
+             <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+             <span class="containerBlog-timePost">42 min ago</span>
+             <a class="containerBlog-userPost" href="#">User</a>
+           </div>
+           <div class="containerBlog__btns">
+             <i id="like" class="uil uil-thumbs-up green"></i>
+             <i id="dislike" class="uil uil-thumbs-down red"></i>
+             <i id="view-ico" class="uil uil-eye view">
+               <span id="view-number" class="count-visit">1</span>
+             </i>
+           </div>
+         </div>
+       </div>
+       <hr>
+        `
+      });
+      break;
+  }
+
 }

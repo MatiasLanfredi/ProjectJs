@@ -97,10 +97,9 @@
             }
             .containerBlog__content {
                 justify-content: center;
-
                 height: 100%;
                 display: flex;
-                height: 280px;
+                height: 320px;
                 flex-direction: column;
                 gap: 20px;
                 h2 {
@@ -252,9 +251,14 @@
     display: none;
 }
 
-.emptyblogs {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    color: $greyTxt;
+.disabled {
+    display: none;
+}
+#containerBlog {
+    .emptyblogs {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        color: $greyTxt;
+    }
 }

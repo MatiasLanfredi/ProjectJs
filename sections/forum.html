@@ -63,7 +63,14 @@
             </div>
           </div>
         </div>
-
+        <div class="choose">
+          <h3>Filter By:</h3>
+          <select id="buttonSelect">
+            <option id="article" value="article">Article</option>
+            <option id="post" value="post">Post</option>
+            <option id="info" value="info">Info</option>
+          </select>
+        </div>
         <!--MODAL SECTION MODAL SECTION -->
         <section class="modal hidden">
           <div class="modal-header">
@@ -82,8 +89,6 @@
                 <option value="post">Post</option>
                 <option value="info">Info</option>
               </select>
-              <!-- HACER RESIZE TXT AREA IN CSS
-                     -->
               <textarea
                 name="form-txt-area"
                 id="form-txt-area"
@@ -99,7 +104,13 @@
           </div>
         </section>
         <div class="overlay hidden"></div>
-        <div id="containerBlog"></div>
+        <div id="containerBlog">
+          <div class="emptyblogs">
+            <h3 id="emptyTitle" class="emptyblogs__txt">
+              Hey! Actually this is empty 😔. Please, create a new Post 💡
+            </h3>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
