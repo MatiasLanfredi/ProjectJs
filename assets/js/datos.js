@@ -36,7 +36,7 @@ const products = [
     {
         id: "web-development-01",
         title: 'Javascript',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-js.webp',
         autor: 'Lanfredi',
         category: {
             name: 'Webdevelopment',
@@ -47,7 +47,7 @@ const products = [
     {
         id: "web-development-02",
         title: 'Css',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-css.jpg',
         autor: 'Lanfredi',
         category: {
             name: 'Webdevelopment',
@@ -58,7 +58,7 @@ const products = [
     {
         id: "web-development-03",
         title: 'Html',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-html.png',
         autor: 'Lanfredi',
         category: {
             name: 'Webdevelopment',
@@ -69,7 +69,7 @@ const products = [
     {
         id: "web-development-04",
         title: 'React',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-react.png',
         autor: 'Lanfredi',
         category: {
             name: 'Webdevelopment',
@@ -80,7 +80,7 @@ const products = [
     {
         id: "data-science-01",
         title: 'Phyton',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-phyton.png',
         autor: 'Vazquez',
         category: {
             name: 'Datascience',
@@ -90,8 +90,8 @@ const products = [
     },
     {
         id: "data-science-02",
-        title: 'Machine Learning',
-        imagen: '../assets/images/productoJs.webp',
+        title: 'A.Intelligence',
+        imagen: '../assets/images/products/product-ia.jpg',
         autor: 'Vazquez',
         category: {
             name: 'Datascience',
@@ -102,7 +102,7 @@ const products = [
     {
         id: "data-science-03",
         title: 'Data Analisys',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-dataanalytics.png',
         autor: 'Vazquez',
         category: {
             name: 'Datascience',
@@ -113,7 +113,7 @@ const products = [
     {
         id: "data-science-04",
         title: 'Deep Learning',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-deeplearning.jpg',
         autor: 'Vazquez',
         category: {
             name: 'Datascience',
@@ -124,7 +124,7 @@ const products = [
     {
         id: "software-engineering-01",
         title: 'Data Structures',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-datastructure.png',
         autor: 'Gonzalez',
         category: {
             name: 'Softwareenginneering',
@@ -135,7 +135,7 @@ const products = [
     {
         id: "software-engineering-02",
         title: 'Algorithms',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-algorithms.jpg',
         autor: 'Gonzalez',
         category: {
             name: 'Softwareenginneering',
@@ -146,7 +146,7 @@ const products = [
     {
         id: "software-engineering-03",
         title: 'Software Architecture',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-softwarearchitecture.png',
         autor: 'Gonzalez',
         category: {
             name: 'Softwareenginneering',
@@ -157,7 +157,7 @@ const products = [
     {
         id: "software-engineering-04",
         title: 'Microservices',
-        imagen: '../assets/images/productoJs.webp',
+        imagen: '../assets/images/products/product-microservices.jpg',
         autor: 'Gonzalez',
         category: {
             name: 'Softwareenginneering',

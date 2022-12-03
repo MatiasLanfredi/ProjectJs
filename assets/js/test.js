@@ -29,26 +29,36 @@
 //     console.log("Final");
 // }, 1000);
 
-const botonselect = document.getElementById("bottonselect");
-const botonarticle = document.getElementById("article").value
-const botoninfo = document.getElementById("info").value
-const botonpost = document.getElementById("post").value
+// const botonselect = document.getElementById("bottonselect");
+// const botonarticle = document.getElementById("article").value
+// const botoninfo = document.getElementById("info").value
+// const botonpost = document.getElementById("post").value
 
-botonselect.addEventListener('click', fondo);
+// botonselect.addEventListener('click', fondo);
 
-function fondo() {
+// function fondo() {
 
-    console.log(botonselect.value);
+//     console.log(botonselect.value);
 
-    switch (botonselect.value) {
-        case "Article":
-            document.body.style.backgroundColor = "red"
-            break;
-        case "Post":
-            document.body.style.backgroundColor = "blue"
-            break;
-        case "info":
-            document.body.style.backgroundColor = "green"
-            break;
-    }
+//     switch (botonselect.value) {
+//         case "Article":
+//             document.body.style.backgroundColor = "red"
+//             break;
+//         case "Post":
+//             document.body.style.backgroundColor = "blue"
+//             break;
+//         case "info":
+//             document.body.style.backgroundColor = "green"
+//             break;
+//     }
+// }
+
+const x1 = "YRYHEYNEIJIJIUNCPLOKUOC";
+
+const x2 = "YRYHEYNEIJIJIUNCPLOKUOC";
+
+if (x1 === x2) {
+    console.log("yes");
+} else {
+    console.log("no");
 }

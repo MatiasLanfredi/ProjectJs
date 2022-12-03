@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap");
-.move__content__container__card-details-btn, .main__content__txt-btn, .header__btn {
+.move__content__container__card-details-btn, .main__content__txt-btn, .header__btn, .body-link a, .body-login #homelink {
   color: #fff;
   background-color: #ff5f61;
   padding: 2px 14px;
@@ -10,7 +10,7 @@
   border-radius: 16px;
   transition: all ease 0.3s;
 }
-.move__content__container__card-details-btn:hover, .main__content__txt-btn:hover, .header__btn:hover {
+.move__content__container__card-details-btn:hover, .main__content__txt-btn:hover, .header__btn:hover, .body-link a:hover, .body-login #homelink:hover {
   color: #20324a;
 }
 
@@ -37,6 +37,31 @@
 
 .body-login {
   background-image: url(../images/bg6.jpg);
+  position: relative;
+}
+.body-login #homelink {
+  z-index: 9999;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 2rem;
+}
+.body-link {
+  border: 2px solid red;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 40%;
+}
+.body-link a {
+  font-weight: 600;
+}
+.body-link i {
+  font-weight: 800;
+  font-size: 1.15rem;
 }
 
 .main-login {
@@ -71,8 +96,11 @@
   transition: all 500ms;
 }
 .container__back div h3 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 26px;
+}
+.container__back div #titlemod {
+  font-size: 22px;
 }
 .container__back div p, .container__back div button {
   margin-top: 30px;
@@ -196,6 +224,29 @@
 .container__forum__center {
   width: 1111px;
   margin: auto;
+}
+.container__forum__center .choose {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 10px;
+}
+.container__forum__center .choose h3 {
+  color: #6500ff;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.container__forum__center .choose #buttonSelect {
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 2px solid #ff5f61;
+  border-radius: 16px;
+  display: flex;
+  gap: 2px;
+  font-size: 1rem;
+}
+.container__forum__center .choose #buttonSelect option {
+  border: none;
 }
 .container__forum__center__header {
   display: flex;
@@ -468,6 +519,7 @@
   align-self: center;
   color: #fff;
   transition: 0.3s;
+  cursor: pointer;
 }
 .header__name:hover {
   color: #ffc205;
@@ -943,7 +995,6 @@
 }
 .container__shop__products__card {
   width: 300px;
-  height: 370px;
   border: 2px solid #6500ff;
   overflow: hidden;
   display: flex;

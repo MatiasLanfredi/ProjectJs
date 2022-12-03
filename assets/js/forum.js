@@ -56,8 +56,11 @@ function validationForm(e) {
   e.preventDefault();
 
   const deleteEmptyContent = document.getElementById("emptyTitle");
+  if (deleteEmptyContent != null) {
 
-  deleteEmptyContent.classList.add("hidden");
+    deleteEmptyContent.classList.add("hidden");
+  }
+
 
   const titleBlog = document.getElementById("title-form").value;
 
@@ -73,12 +76,15 @@ function validationForm(e) {
   switch (article.typePost) {
     case "info":
       infoArray.push(article);
+      localStorage.setItem("infoArrayJson", JSON.stringify(infoArray));
       break;
     case "post":
       postArray.push(article);
+      localStorage.setItem("postArrayJson", JSON.stringify(postArray));
       break;
     case "article":
       articleArray.push(article);
+      localStorage.setItem("articleArrayJson", JSON.stringify(articleArray));
       break;
   }
   savedBlogs.push(article);
@@ -140,8 +146,7 @@ function validationForm(e) {
 
 /*============================ POSTS ALREADY SAVED  ==========================================*/
 
-
-const containerBlog = document.getElementById("containerBlog");
+let containerBlog = document.getElementById("containerBlog");
 
 const printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
 
@@ -193,11 +198,14 @@ const buttonPost = document.getElementById("post").value
 buttonSelect.addEventListener('click', reloadContent);
 
 function reloadContent() {
-  console.log(buttonSelect.value);
+  const infoArrayJson = JSON.parse(localStorage.getItem("infoArrayJson"));
+  const postArrayJson = JSON.parse(localStorage.getItem("postArrayJson"));
+  const articleArrayJson = JSON.parse(localStorage.getItem("articleArrayJson"));
 
   switch (buttonSelect.value) {
     case "article":
-      articleArray.forEach(article => {
+      containerBlog.innerHTML = "";
+      articleArrayJson.forEach(article => {
         containerBlog.innerHTML += `
          <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
           <div class="containerBlog__card">
@@ -205,12 +213,12 @@ function reloadContent() {
              <img src="../assets/images/move2.svg" alt="image about post" />
            </picture>
            <div class="containerBlog__content">
-             <h2>${blog.title}</h2>
+             <h2>${article.title}</h2>
              <p>
-               ${blog.content}
+               ${article.content}
              </p>
            <div class="containerBlog__info">
-             <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+             <class="containerBlog-typePost"<a href="#">${article.typePost}</a>
              <span class="containerBlog-timePost">42 min ago</span>
              <a class="containerBlog-userPost" href="#">User</a>
            </div>
@@ -228,7 +236,8 @@ function reloadContent() {
       });
       break;
     case "post":
-      postArray.forEach(post => {
+      containerBlog.innerHTML = "";
+      postArrayJson.forEach(post => {
         containerBlog.innerHTML += `
          <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
           <div class="containerBlog__card">
@@ -236,12 +245,12 @@ function reloadContent() {
              <img src="../assets/images/move2.svg" alt="image about post" />
            </picture>
            <div class="containerBlog__content">
-             <h2>${blog.title}</h2>
+             <h2>${post.title}</h2>
              <p>
-               ${blog.content}
+               ${post.content}
              </p>
            <div class="containerBlog__info">
-             <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+             <class="containerBlog-typePost"<a href="#">${post.typePost}</a>
              <span class="containerBlog-timePost">42 min ago</span>
              <a class="containerBlog-userPost" href="#">User</a>
            </div>
@@ -259,7 +268,8 @@ function reloadContent() {
       });
       break;
     case "info":
-      infoArray.forEach(info => {
+      containerBlog.innerHTML = "";
+      infoArrayJson.forEach(info => {
         containerBlog.innerHTML += `
          <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
           <div class="containerBlog__card">
@@ -267,12 +277,12 @@ function reloadContent() {
              <img src="../assets/images/move2.svg" alt="image about post" />
            </picture>
            <div class="containerBlog__content">
-             <h2>${blog.title}</h2>
+             <h2>${info.title}</h2>
              <p>
-               ${blog.content}
+               ${info.content}
              </p>
            <div class="containerBlog__info">
-             <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+             <class="containerBlog-typePost"<a href="#">${info.typePost}</a>
              <span class="containerBlog-timePost">42 min ago</span>
              <a class="containerBlog-userPost" href="#">User</a>
            </div>

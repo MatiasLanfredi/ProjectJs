@@ -5,21 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../assets/images/iconPage.png" />
+    <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+  />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>Login | FF</title>
   </head>
   <body class="body-login">
+    <a id="homelink" href="../index.html"><i class="uil uil-home"></i></a>
       <div class="container__main">
         <div class="container__back">
           <div class="container__back-login">
-            <h3>¿Ya tienes una cuenta?</h3>
-            <p>Inicia sesion para entrar en la pagina</p>
-            <button id="btn__iniciar-sesion">Iniciar Sesion</button>
+            <h3 id="titlemod">Already have an account?</h3>
+            <p>Log in to enjoy with us!</p>
+            <button id="btn__iniciar-sesion">Log in</button>
+           
           </div>
           <div class="container__back-register">
-            <h3>¿Aun no tienes una cuenta?</h3>
-            <p>Registrate para que puedas iniciar sesion</p>
-            <button id="btn__register">Registrate</button>
+            <h3>Need an account?</h3>
+            <p>Sign up to enjoy with us!</p>
+            <button id="btn__register">Sign up for free</button>
           </div>
         </div>
 
@@ -27,13 +33,13 @@
         <div class="container__login-register">
           <!-- FORMULARIO LOGIN -->
           <form action="" class="form__login">
-            <h2>Iniciar Sesion</h2>
+            <h2>Log in</h2>
             <input
               type="email"
-              placeholder="Correo Electronico"
+              placeholder="Email"
               id="email-login"
             />
-            <input id="showpass" type="password" placeholder="Contraseña" />
+            <input id="showpass" type="password" placeholder="Password" />
             <div class="password-box">
               <input
                 class="input-password"
@@ -41,26 +47,26 @@
                 name="ShowPassword"
                 id="show-password"
               />
-              <p>Mostrar Contraseña</p>
+              <p>Show password</p>
             </div>
-            <button type="submit" id="iniciar-sesion">Iniciar Sesion</button>
+            <button type="submit" id="iniciar-sesion">Log in</button>
           </form>
 
           <!-- FORMULARIO REGISTER -->
 
           <form action="" class="form__register">
-            <h2>Registrarse</h2>
+            <h2>Sign up</h2>
             <input
               type="text"
-              placeholder="Nombre Completo"
+              placeholder="Full name"
               id="nombre-register"
             />
             <input
               type="email"
-              placeholder="Correo Electronico"
+              placeholder="Email"
               id="email-register"
             />
-            <input type="text" placeholder="Usuario" id="user-register" />
+            <input type="text" placeholder="User" id="user-register" />
             <input id="showpass2" type="password" placeholder="Password" />
             <div class="password-box">
               <input
@@ -69,9 +75,11 @@
                 name="ShowPassword"
                 id="show-password2"
               />
-              <p>Mostrar Contraseña</p>
+              <p>Show password</p>
             </div>
-            <button type="submit" id="register-button">Registrarse</button>
+            <button type="submit" id="register-button">
+              Sign up
+            </button>
           </form>
         </div>
       </div>

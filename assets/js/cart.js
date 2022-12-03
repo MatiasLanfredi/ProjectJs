@@ -1,12 +1,17 @@
+'use strict';
 const productsInCart = JSON.parse(localStorage.getItem("productsCart"));
-
-console.log(productsInCart);
 const legendEmpty = document.getElementById("legendEmpty");
 const containerProducts = document.getElementById("containerProducts");
 const buyCart = document.getElementById("buyCart");
 const operationsButton = document.getElementById("operationsButton");
-const productButtonsDelete = document.querySelectorAll("cart__container__products__content__card-deleteButton")
+const productButtonsDelete = document.querySelectorAll(".cart__container__products__content__card-deleteButton")
 
+/** MAIN CODE */
+loadProductsCart();
+
+
+/* FUNCIONES 
+ */
 
 function loadProductsCart() {
     if (productsInCart) {
@@ -37,28 +42,26 @@ function loadProductsCart() {
     } else {
         containerProducts.innerHTML = `<p id="legendEmpty">Your cart is empty😔</p> `
     }
+
     deleteCartButtons();
 }
 
-loadProductsCart();
-
-
 
 function deleteCartButtons() {
-
-    let deleteButtons = document.querySelectorAll("cart__container__products__content__card-deleteButton");
-
-    deleteButtons.forEach(button => { // add event 
-        button.addEventListener('click', deleteCart(e));
+    let deleteButton = document.querySelectorAll(".cart__container__products__content__card-deleteButton");
+    deleteButton.forEach(button => {
+        button.addEventListener('click', deleteCart);
     })
 }
-
-
 function deleteCart(e) {
-    let idButton = e.currentTarget.id;
-    console.log(idButton);
-
+    const idButton = e.currentTarget.id;
+    const indexDelete = productsInCart.findIndex(product => product.id === idButton);
+    console.log(productsInCart);
+    productsInCart.splice(indexDelete, 1);
+    localStorage.setItem("productsCart", productsInCart);
+    console.log(productsInCart);
 
 }
+
 
 

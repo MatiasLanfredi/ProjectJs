@@ -1,12 +1,53 @@
 
 'use strict';
-
+/*=============================VARIABLES=====================================*/
 const shopContainer = document.getElementById("shopContainer");
 const titleContainer = document.getElementById("titleContainer");
 const articlesNumber = document.getElementById("articlesNumber");
+let productsCart = [];
 
+const buttonsCategory = document.querySelectorAll(".button-category");
+/*============================== MAIN CODE ========================================*/
+
+loadProducts(products);
+titleContainer.innerHTML = "All Products✨"
+
+/* ADD EVENT TO BUTTON FOR A FILTER BY TYPE OF COURSE*/
+buttonsCategory.forEach(button => {
+  button.addEventListener('click', (e) => {
+
+    buttonsCategory.forEach(button => button.classList.remove("active"))
+
+    e.currentTarget.classList.add("active")
+
+    if (e.currentTarget.id != "all") {
+
+      const productCategory = products.find(product => product.category.id === e.currentTarget.id);
+
+      switch (productCategory.category.name) {
+        case "Webdevelopment":
+          titleContainer.innerText = "Web Development💻";
+          break;
+        case "Datascience":
+          titleContainer.innerText = "Data Science📊";
+          break;
+        case "Softwareenginneering":
+          titleContainer.innerText = "Software Engineering🧱";
+          break;
+      }
+
+      const productsFilter = products.filter(product => product.category.id === e.currentTarget.id);
+      loadProducts(productsFilter);
+
+    } else {
+      titleContainer.innerHTML = "All Products✨"
+      loadProducts(products);
+    }
+  })
+});
+
+/*============================= ******FUNCTIONS SECTION****** ===========================*/
 function loadProducts(showProducts) {
-
   shopContainer.innerHTML = "";
 
   showProducts.forEach(product => {
@@ -38,35 +79,6 @@ function loadProducts(showProducts) {
 
   addtoCartButtons();
 }
-
-loadProducts(products);
-
-
-const buttonsCategory = document.querySelectorAll(".button-category");
-
-buttonsCategory.forEach(button => {
-  button.addEventListener('click', (e) => {
-
-    buttonsCategory.forEach(button => button.classList.remove("active"))
-
-    e.currentTarget.classList.add("active")
-
-    if (e.currentTarget.id != "all") {
-
-      const productCategory = products.find(product => product.category.id === e.currentTarget.id);
-
-      titleContainer.innerText = productCategory.category.name;
-
-      const productsFilter = products.filter(product => product.category.id === e.currentTarget.id);
-      loadProducts(productsFilter);
-
-    } else {
-      titleContainer.innerHTML = "All Products"
-      loadProducts(products);
-    }
-  })
-});
-
 function addtoCartButtons() {
 
   let addButtons = document.querySelectorAll(".container__shop__products__card-details-content-button");
@@ -75,13 +87,18 @@ function addtoCartButtons() {
     button.addEventListener('click', addToCart);
   })
 }
-
-const productsCart = [];
-
-const productCartinJson = JSON.parse(localStorage.getItem("productsCart"));
-
+let productinCart;
+let productCartinJsonLS = localStorage.getItem("productsCart")
+//const productCartinJsonLS = JSON.parse(localStorage.getItem("productsCart"));
+if (productCartinJsonLS) {
+  productinCart = JSON.parse(productCartinJsonLS);
+  UpdateNumberCart();
+} else {
+  productsCart = [];
+}
 
 function addToCart(e) {
+
   const idButton = e.currentTarget.id;
   const addedProduct = products.find(product => product.id === idButton);
 
@@ -92,13 +109,13 @@ function addToCart(e) {
     addedProduct.quantity = 1;
     productsCart.push(addedProduct);
   }
-  toUpdateNumberCart();
+
+  UpdateNumberCart();
 
   localStorage.setItem("productsCart", JSON.stringify(productsCart));
 }
 
-
-function toUpdateNumberCart() {
+function UpdateNumberCart() {
   let articlesNumberCart = productsCart.reduce((acc, product) => acc + product.quantity, 0);
   articlesNumber.innerHTML = articlesNumberCart;
 }
