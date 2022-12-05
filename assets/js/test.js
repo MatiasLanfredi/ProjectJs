@@ -53,12 +53,20 @@
 //     }
 // }
 
-const x1 = "YRYHEYNEIJIJIUNCPLOKUOC";
+let container = document.getElementById("container");
 
-const x2 = "YRYHEYNEIJIJIUNCPLOKUOC";
+fetch("../../data.json")
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach(product => {
+            const div = document.createElement("div");
+            div.innerHTML += `
+            <img src="${product.imagen}" alt="${product.name}">
+            <h2>${product.title} </h2>
+            
+            <h5>${product.price} </h5>
+            `;
 
-if (x1 === x2) {
-    console.log("yes");
-} else {
-    console.log("no");
-}
+            container.append(div)
+        });
+    })

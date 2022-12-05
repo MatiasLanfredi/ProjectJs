@@ -194,6 +194,12 @@ const buttonSelect = document.getElementById("buttonSelect");
 const buttonArticle = document.getElementById("article").value
 const buttonInfo = document.getElementById("info").value
 const buttonPost = document.getElementById("post").value
+const buttonAll = document.getElementById("everything").value
+const titleTypeBox = document.getElementById("titleTypeBox");
+
+titleTypeBox.innerHTML = `
+<h1 class="titleforum">${buttonAll}</h1>
+`
 
 buttonSelect.addEventListener('click', reloadContent);
 
@@ -201,9 +207,47 @@ function reloadContent() {
   const infoArrayJson = JSON.parse(localStorage.getItem("infoArrayJson"));
   const postArrayJson = JSON.parse(localStorage.getItem("postArrayJson"));
   const articleArrayJson = JSON.parse(localStorage.getItem("articleArrayJson"));
-
+  console.log(buttonSelect.value);
   switch (buttonSelect.value) {
+    case "all":
+      titleTypeBox.innerHTML = `
+      <h1 class="titleforum">All</h1>
+      `
+      printBlogs.forEach(blog => {
+        containerBlog.innerHTML += `
+        <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
+         <div class="containerBlog__card">
+          <picture>
+            <img src="../assets/images/move2.svg" alt="image about post" />
+          </picture>
+          <div class="containerBlog__content">
+            <h2>${blog.title}</h2>
+            <p>
+              ${blog.content}
+            </p>
+          <div class="containerBlog__info">
+            <class="containerBlog-typePost"<a href="#">${blog.typePost}</a>
+            <span class="containerBlog-timePost">42 min ago</span>
+            <a class="containerBlog-userPost" href="#">User</a>
+          </div>
+          <div class="containerBlog__btns">
+            <i id="like" class="uil uil-thumbs-up green"></i>
+            <i id="dislike" class="uil uil-thumbs-down red"></i>
+            <i id="view-ico" class="uil uil-eye view">
+              <span id="view-number" class="count-visit">1</span>
+            </i>
+          </div>
+        </div>
+      </div>
+      <hr>
+       `
+
+      });
+      break;
     case "article":
+      titleTypeBox.innerHTML = `
+      <h1 class="titleforum">${buttonArticle}</h1>
+      `
       containerBlog.innerHTML = "";
       articleArrayJson.forEach(article => {
         containerBlog.innerHTML += `
@@ -236,6 +280,9 @@ function reloadContent() {
       });
       break;
     case "post":
+      titleTypeBox.innerHTML = `
+      <h1 class="titleforum">${buttonPost}</h1>
+      `
       containerBlog.innerHTML = "";
       postArrayJson.forEach(post => {
         containerBlog.innerHTML += `
@@ -268,6 +315,9 @@ function reloadContent() {
       });
       break;
     case "info":
+      titleTypeBox.innerHTML = `
+      <h1 class="titleforum">${buttonInfo}</h1>
+      `
       containerBlog.innerHTML = "";
       infoArrayJson.forEach(info => {
         containerBlog.innerHTML += `

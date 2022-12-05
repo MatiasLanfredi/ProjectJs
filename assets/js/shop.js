@@ -1,123 +1,152 @@
+let shoppingCartArray = [];
+let total = 0;
+let totalElement = document.querySelector(".cart-total-price");
+let productContainer = document.querySelector("#shopContainer");
+//=>
+fetch("../../data.json")
+  .then(response => response.json())
+  .then(productsArray => {
+    productsArray.forEach(product => {
+      const div = document.createElement("div");
+      div.classList.add("container__shop__products__card");
+      div.innerHTML = `
+      <picture>
+          <img src="${product.imagen}" alt="${product.title}" />
+      </picture>
+      <div class="container__shop__products__card-details">
+          <div class="container__shop__products__card-details-content">
+            <h4>${product.title}</h4>
+            <p class="container__shop__products__card-details-content-txt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dolores laudantium rerum dolorum, nostrum quos fugiat totam
+            </p>
+            <p class="container__shop__products__card-details-content-price">
+              $<span>${product.price}</span>
+            </p>
+            <button class="container__shop__products__card-details-content-button" id="${product.id}">
+              Agregar <i class="uil uil-shopping-cart"></i>
+            </button>
+          </div>
+        </div>
+      `
+      productContainer.append(div);
+    });
 
-'use strict';
-/*=============================VARIABLES=====================================*/
-const shopContainer = document.getElementById("shopContainer");
-const titleContainer = document.getElementById("titleContainer");
-const articlesNumber = document.getElementById("articlesNumber");
-let productsCart = [];
+    let addBtns = document.querySelectorAll(".container__shop__products__card-details-content-button")
 
-const buttonsCategory = document.querySelectorAll(".button-category");
-/*============================== MAIN CODE ========================================*/
+    addBtns = [...addBtns];
 
-loadProducts(products);
-titleContainer.innerHTML = "All Products✨"
+    let cartContainer = document.querySelector(".cart-items");
 
-/* ADD EVENT TO BUTTON FOR A FILTER BY TYPE OF COURSE*/
-buttonsCategory.forEach(button => {
-  button.addEventListener('click', (e) => {
+    addBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        console.log(e);
+        //ADD PRODUCTS TO CART
 
-    buttonsCategory.forEach(button => button.classList.remove("active"))
+        //search products's ID
+        let actualID = e.currentTarget.id;
 
-    e.currentTarget.classList.add("active")
+        let actualProduct = productsArray.find(item => item.id === actualID);
 
-    if (e.currentTarget.id != "all") {
+        if (actualProduct.quantity === undefined) {
+          actualProduct.quantity = 1;
+        }
+        let flag = false;
 
-      const productCategory = products.find(product => product.category.id === e.currentTarget.id);
+        shoppingCartArray.forEach(product => {
+          if (actualID == product.id) {
+            flag = true;
+          };
+        });
+        if (flag) {
+          actualProduct.quantity++
+        } else {
+          shoppingCartArray.push(actualProduct);
+        };
 
-      switch (productCategory.category.name) {
-        case "Webdevelopment":
-          titleContainer.innerText = "Web Development💻";
-          break;
-        case "Datascience":
-          titleContainer.innerText = "Data Science📊";
-          break;
-        case "Softwareenginneering":
-          titleContainer.innerText = "Software Engineering🧱";
-          break;
-      }
+        drawItems();
 
-      const productsFilter = products.filter(product => product.category.id === e.currentTarget.id);
-      loadProducts(productsFilter);
+        getTotal();
 
-    } else {
-      titleContainer.innerHTML = "All Products✨"
-      loadProducts(products);
-    }
-  })
-});
+        updateNumberItems();
 
-/*============================= ******FUNCTIONS SECTION****** ===========================*/
-function loadProducts(showProducts) {
-  shopContainer.innerHTML = "";
+        removeItems();
+      });
+    });
+  });
 
-  showProducts.forEach(product => {
+function drawItems() {
+  let cartContainer = document.getElementById("cart-item");
+  cartContainer.innerHTML = ' ';
 
-    const div = document.createElement("div");
-    div.classList.add("container__shop__products__card");
-    div.innerHTML = `
-    <picture>
-    <img src="${product.imagen}" alt="${product.title}" />
-    </picture>
-    <div class="container__shop__products__card-details">
-    <div class="container__shop__products__card-details-content">
-    <h4>${product.title}</h4>
-    <p class="container__shop__products__card-details-content-txt">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Dolores laudantium rerum dolorum, nostrum quos fugiat totam
-    </p>
-    <p class="container__shop__products__card-details-content-price">
-    $<span>${product.price}</span>
-    </p>
-    <button class="container__shop__products__card-details-content-button" id="${product.id}">
-    Agregar <i class="uil uil-shopping-cart"></i>
-    </button>
+  shoppingCartArray.forEach(product => {
+    cartContainer.innerHTML += `
+    <div class="cart-row">
+    <div class="cart-item cart-column">
+        <img class="cart-item-image" src="${product.imagen}" width="100" height="100">
+        <span class="cart-item-title">${product.title}</span>
     </div>
+    <span class="cart-price cart-column">$${product.price}</span>
+    <div class="cart-quantity cart-column">
+        <input class="cart-quantity-input" min="1" type="number" value="${product.quantity}">
+        <button class="btm btm-danger" type="button">REMOVE</button>
     </div>
-    `
-    shopContainer.append(div);
-  })
+</div>`
 
-  addtoCartButtons();
-}
-function addtoCartButtons() {
-
-  let addButtons = document.querySelectorAll(".container__shop__products__card-details-content-button");
-
-  addButtons.forEach(button => { // add event 
-    button.addEventListener('click', addToCart);
-  })
-}
-let productinCart;
-let productCartinJsonLS = localStorage.getItem("productsCart")
-//const productCartinJsonLS = JSON.parse(localStorage.getItem("productsCart"));
-if (productCartinJsonLS) {
-  productinCart = JSON.parse(productCartinJsonLS);
-  UpdateNumberCart();
-} else {
-  productsCart = [];
+  });
+  removeItems();
 }
 
-function addToCart(e) {
+function getTotal() {
+  let sumTotal;
+  let total = shoppingCartArray.reduce((sum, item) => {
+    sumTotal = sum + (item.quantity * item.price)
+    return sumTotal;
+  }, 0)
+  totalElement.innerText = `$${total}`
+};
 
-  const idButton = e.currentTarget.id;
-  const addedProduct = products.find(product => product.id === idButton);
 
-  if (productsCart.some(product => product.id === idButton)) {
-    const indexProductArray = productsCart.findIndex(product => product.id === idButton)
-    productsCart[indexProductArray].quantity++;
-  } else {
-    addedProduct.quantity = 1;
-    productsCart.push(addedProduct);
-  }
+function updateNumberItems() {
+  let inputNumber = document.querySelectorAll('.cart-quantity-input');
 
-  UpdateNumberCart();
+  inputNumber = [...inputNumber];
 
-  localStorage.setItem("productsCart", JSON.stringify(productsCart));
+  inputNumber.forEach(item => {
+    item.addEventListener('click', (event) => {
+      //catch title product
+      let actualProductTitle = event.target.parentElement.parentElement.childNodes[1].innerText;
+
+      let actualProductQuantity = parseInt(event.target.value);
+      //search object with that title
+      let actualProductObject = shoppingCartArray.find(item => item.title === actualProductTitle);
+      //update total price 
+      actualProductObject.quantity = actualProductQuantity;
+
+      getTotal();
+    });
+  });
+
+};
+
+function removeItems() {
+  let removeBtns = document.querySelectorAll(".btm-danger");
+
+  removeBtns = [...removeBtns];
+
+  removeBtns.forEach(btn => {
+    btn.addEventListener('click', event => {
+      //catch title product
+      let actualProductTitle = event.target.parentElement.parentElement.childNodes[1].innerText;
+      //search object with that title
+      let actualProductObject = shoppingCartArray.find(item => item.title === actualProductTitle);
+      //remove from array
+      shoppingCartArray = shoppingCartArray.filter(item => item != actualProductObject);
+      console.log(shoppingCartArray);
+      //update total price 
+      drawItems()
+      getTotal()
+      updateNumberItems()
+    });
+  });
 }
-
-function UpdateNumberCart() {
-  let articlesNumberCart = productsCart.reduce((acc, product) => acc + product.quantity, 0);
-  articlesNumber.innerHTML = articlesNumberCart;
-}
-
-

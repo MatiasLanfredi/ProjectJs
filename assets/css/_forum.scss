@@ -6,7 +6,7 @@
         margin: auto;
         .choose {
             display: flex;
-            gap: 5px;
+            gap: 50px;
             align-items: center;
             margin: 10px;
             h3 {
@@ -26,14 +26,25 @@
                     border: none;
                 }
             }
+            &__filter {
+                display: flex;
+                gap: 20px;
+            }
+            &__header {
+                margin-left: 200px;
+                h1:first-letter {
+                    text-transform: uppercase;
+                }
+            }
         }
         &__header {
             display: flex;
             padding: 20px;
             align-items: center;
             justify-content: space-around;
-            h2 {
+            h1 {
                 color: #000;
+                font-size: 2rem;
             }
         }
         hr {
@@ -284,4 +295,7 @@
         padding-top: 10px;
         color: $greyTxt;
     }
+}
+.titleforum {
+    font-size: 2.7rem;
 }

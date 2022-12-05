@@ -74,24 +74,13 @@
                 </button>
               </li>
               <li>
-                <a href="./cart.html" class="button-cart">
+                <a href="#shoppingCart" class="button-cart">
                   Cart
                   <i class="uil uil-shopping-cart"></i>
                   <span id="articlesNumber" class="cart-number">0</span>
                 </a>
               </li>
             </ul>
-            <!-- <div class="container__shop__content-priceRange">
-              <h3>Price Range</h3>
-              <input
-                type="range"
-                id="vol"
-                name="vol"
-                value="2000"
-                min="1000"
-                max="10000"
-              />
-            </div> -->
           </div>
           <div>
             <div
@@ -103,6 +92,25 @@
         </section>
       </div>
     </main>
+
+    <section id="shoppingCart" class="container content-section">
+      <h2 class="section-header">Shopping Cart</h2>
+      <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+      <div id="cart-item" class="cart-items">
+        <!-- js -->
+      </div>
+      <div class="cart-total">
+        <strong class="cart-total-title">Total:</strong>
+        <span class="cart-total-price"></span>
+      </div>
+      <button class="btm btn-primary btm-purchase" type="button">
+        Checkout
+      </button>
+    </section>
     <footer>
       <div class="footer">
         <div class="footer__content">
