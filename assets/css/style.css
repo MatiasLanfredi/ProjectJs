@@ -30,11 +30,6 @@
   border: 2px solid #000;
 }
 
-.cart__container__products__content__card-totalPrice p, .cart__container__products__content__card-totalPrice .container__back div button, .container__back div .cart__container__products__content__card-totalPrice button, .cart__container__products__content__card-price p, .cart__container__products__content__card-price .container__back div button, .container__back div .cart__container__products__content__card-price button, .cart__container__products__content__card-quantity p, .cart__container__products__content__card-quantity .container__back div button, .container__back div .cart__container__products__content__card-quantity button, .cart__container__products__content__card-title p, .cart__container__products__content__card-title .container__back div button, .container__back div .cart__container__products__content__card-title button {
-  color: #9e9e9e;
-  text-align: center;
-}
-
 .body-login {
   background-image: url(../images/bg6.jpg);
   position: relative;
@@ -1204,128 +1199,6 @@
   background-color: #8331fd;
 }
 
-.hidden {
-  display: none;
-}
-
-.cart {
-  width: 1111px;
-  margin: auto;
-}
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 30px 0px;
-}
-.cart-header h2 {
-  font-weight: 800;
-  letter-spacing: 1.4px;
-  font-size: 2.4rem;
-  color: #ff5f61;
-}
-.cart-header a {
-  color: #6500ff;
-  font-size: 0.9rem;
-  transition: 0.3s;
-}
-.cart-header a:hover {
-  color: #ff5f61;
-}
-.cart__container {
-  width: 1111px;
-  margin: auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-.cart__container__products {
-  padding: 15px;
-  border: 2px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(45deg, #ff5f61, #6500ff);
-  display: flex;
-  flex-direction: column;
-}
-.cart__container__products #legendEmpty {
-  color: #9e9e9e;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-}
-.cart__container__products__content {
-  display: flex;
-  flex-direction: column;
-}
-.cart__container__products__content__card {
-  width: 650px;
-  padding: 15px 10px;
-  border-bottom: 1px solid #9e9e9e;
-  border-top: 1px solid #9e9e9e;
-}
-.cart__container__products__content__card-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cart__container__products__content__card picture img {
-  width: 200px;
-  border-radius: 16px;
-}
-.cart__container__products__content__card-deleteButton {
-  outline: none;
-  border: none;
-  font-size: 1.5rem;
-  color: rgb(245, 9, 9);
-  cursor: pointer;
-  background-color: #fff;
-}
-.cart__container__checkout {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-}
-.cart__container__checkout__card {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 40px;
-}
-.cart__container__checkout__card-price {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-top: 10px;
-}
-.cart__container__checkout__card-price p, .cart__container__checkout__card-price .container__back div button, .container__back div .cart__container__checkout__card-price button {
-  color: #9e9e9e;
-  letter-spacing: 1.3px;
-  font-weight: 800;
-  font-size: 1.3rem;
-}
-.cart__container__checkout__card-price span {
-  color: #000;
-  font-size: 2rem;
-  font-weight: 700;
-}
-.cart__container__checkout__card button {
-  border: none;
-  background-color: #6500ff;
-  color: #fff;
-  padding: 5px 15px;
-  font-weight: 600;
-  width: 100%;
-  height: 40px;
-  transition: 0.3s;
-}
-.cart__container__checkout__card button:hover {
-  background-color: #8331fd;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -1334,14 +1207,22 @@
   font-family: "Poppins", sans-serif;
 }
 
-.btn {
-  border: 1px solid #46a2fd;
-  border-radius: 50%;
-  padding: 4px 8.5px;
-  color: #46a2fd;
-  transition: 0.3s;
-}
-.btn:hover {
-  background-color: #46a2fd;
+.btm-cancel, .btm-success {
+  background-color: rgb(207, 32, 32);
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 5px;
   color: #fff;
+  font-weight: 600;
+}
+.btm-cancel:hover, .btm-success:hover {
+  background-color: rgb(236, 46, 46);
+}
+
+.btm-success {
+  background-color: rgb(136, 216, 16);
+}
+.btm-success:hover {
+  background-color: rgb(157, 250, 18);
 }/*# sourceMappingURL=style.css.map */

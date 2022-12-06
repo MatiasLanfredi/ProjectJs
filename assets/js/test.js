@@ -53,20 +53,30 @@
 //     }
 // }
 
-let container = document.getElementById("container");
+// let container = document.getElementById("container");
 
-fetch("../../data.json")
-    .then((response) => response.json())
-    .then((data) => {
-        data.forEach(product => {
-            const div = document.createElement("div");
-            div.innerHTML += `
-            <img src="${product.imagen}" alt="${product.name}">
-            <h2>${product.title} </h2>
-            
-            <h5>${product.price} </h5>
-            `;
+// fetch("../../data.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//         data.forEach(product => {
+//             const div = document.createElement("div");
+//             div.innerHTML += `
+//             <img src="${product.imagen}" alt="${product.name}">
+//             <h2>${product.title} </h2>
 
-            container.append(div)
-        });
-    })
+//             <h5>${product.price} </h5>
+//             `;
+
+//             container.append(div)
+//         });
+//     })
+const myArray = [
+    { "id": "asd", "name": "Alice" },
+    { "id": 2, "name": "Peter" },
+    { "id": 3, "name": "Harry" }
+];
+
+// Get the Array item which matchs the id "2"
+const result = myArray.find(item => item.id === "asd");
+
+console.log(result.name);  // Prints: Peter
