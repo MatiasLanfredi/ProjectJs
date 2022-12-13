@@ -87,8 +87,8 @@ function validationForm(e) {
       localStorage.setItem("articleArrayJson", JSON.stringify(articleArray));
       break;
   }
-  savedBlogs.push(article);
 
+  savedBlogs.push(article);
 
   localStorage.setItem("blogPosted", JSON.stringify(savedBlogs));
 
@@ -148,7 +148,7 @@ function validationForm(e) {
 
 let containerBlog = document.getElementById("containerBlog");
 
-const printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
+let printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
 
 if (printBlogs !== null) {
   document.addEventListener('DOMContentLoaded', () => {
@@ -207,12 +207,15 @@ function reloadContent() {
   const infoArrayJson = JSON.parse(localStorage.getItem("infoArrayJson"));
   const postArrayJson = JSON.parse(localStorage.getItem("postArrayJson"));
   const articleArrayJson = JSON.parse(localStorage.getItem("articleArrayJson"));
-  console.log(buttonSelect.value);
+  const printBlogs = JSON.parse(localStorage.getItem("blogPosted"));
+  console.log(printBlogs);
+
   switch (buttonSelect.value) {
     case "all":
       titleTypeBox.innerHTML = `
       <h1 class="titleforum">All</h1>
       `
+      containerBlog.innerHTML = "";
       printBlogs.forEach(blog => {
         containerBlog.innerHTML += `
         <a href="#"><i id="buttonHearth" class="uil uil-heart hearth"></i></a>
