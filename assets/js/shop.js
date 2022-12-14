@@ -214,8 +214,6 @@ function removeItems() {
 
           localStorage.setItem("products-cart", JSON.stringify(shoppingCartArray));
 
-          console.log(shoppingCartArray);
-
           //update total price 
           drawItems()
           getTotal()
@@ -268,34 +266,24 @@ buttonCategory.forEach(btn => {
         console.log(productsFilter);
         break;
     }
-
-    // if (event.currentTarget.id != "all") {
-    //   const productsFilter = products.filter(product => product.category.id === event.currentTarget.id)
-    //   drawItems(productsFilter);
-    // } else {
-    //   drawItems(products)
-    // }
-
   })
 })
 
-/* ==============PRDOCUTS CART LOADED ================= */
+const checkoutBtn = document.getElementById("checkoutBtn");
 
-// productsLS = JSON.parse(localStorage.getItem("products-cart"));
+let chars = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+let passw = "";
+for (i=0; i<20; i++) passw +=chars.charAt(Math.floor(Math.random()*chars.length)); 
 
-// console.log(productsLS);
-
-// productsLS.forEach(product => {
-//   cartContainer.innerHTML += `
-//   <div class="cart-row">
-//   <div class="cart-item cart-column">
-//       <img class="cart-item-image" src="${product.imagen}" width="100" height="100">
-//       <span class="cart-item-title">${product.title}</span>
-//   </div>
-//   <span class="cart-price cart-column">$${product.price}</span>
-//   <div class="cart-quantity cart-column">
-//       <input class="cart-quantity-input" min="1" type="number" value="${product.quantity}">
-//       <button class="btm btm-danger" type="button">REMOVE</button>
-//   </div>
-// </div>`
-// });
+checkoutBtn.addEventListener('click', () => {
+  Swal.fire({
+    title: "Thank you!💖",
+    html: `With this code<br> <strong style:#6500ff>${passw}</strong><br> you can follow your order ` ,
+    icon: 'success',
+    width: '40%',
+    backdrop: true,
+    timer: 3000,
+    timerProgressBar: true,
+    allowOutsideClick: false,
+});
+})
